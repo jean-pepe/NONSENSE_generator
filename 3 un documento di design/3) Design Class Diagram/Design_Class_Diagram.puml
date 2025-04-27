@@ -1,0 +1,46 @@
+@startuml
+
+class SentenceAnalyzer {
+    - inputText: String
+    - parsedStructure: Object
+    + analyzeSyntax(): void
+    + extractTerms(): List<Term>
+    + validateSyntax(): Boolean
+}
+
+class WordDictionary {
+    - words: List<String>
+    + loadWords(filepath: String): void
+    + getRandomWord(): String
+    + addWord(word: String): void
+}
+
+class SentenceTemplate {
+    - templatePattern: String
+    + getPlaceholders(): List<String>
+}
+
+class SentenceGenerator {
+    - template: SentenceTemplate
+    - dictionaries: Map<String, WordDictionary>
+    + generateSentence(): String
+    + setTense(tense: String): void
+}
+
+class ToxicityValidator {
+    - toxicityThreshold: Float
+    + validate(text: String): Boolean
+}
+
+class PersistenceManager {
+    - storagePath: String
+    + saveData(format: String, data: Object): void
+}
+
+SentenceGenerator --> WordDictionary : usa
+SentenceGenerator --> SentenceTemplate : usa
+SentenceGenerator --> ToxicityValidator : valida frase
+PersistenceManager --> SentenceGenerator : salva output
+SentenceAnalyzer --> WordDictionary : aggiorna dizionari
+
+@enduml
