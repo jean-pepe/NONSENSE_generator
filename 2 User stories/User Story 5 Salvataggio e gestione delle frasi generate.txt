@@ -1,0 +1,17 @@
+Come utente,
+voglio salvare le frasi generate in diversi formati
+così che io possa riutilizzarle successivamente.
+
+§Descrizione di dettaglio:
+
+*Dopo la generazione, l’utente può scegliere di salvare:
+
+	*Solo la frase.
+
+	*La morfologia associata (struttura grammaticale).
+
+*I file possono essere esportati in diversi formati: .json, .xml, .txt.
+
+*I dati vengono salvati in un "bucket" locale o in uno storage cloud specificato.
+
+*È possibile selezionare il tempo verbale (passato, presente, futuro) prima della generazione.

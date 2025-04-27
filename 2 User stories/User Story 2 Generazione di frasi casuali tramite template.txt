@@ -1,0 +1,15 @@
+Come utente,
+voglio che il sistema generi frasi corrette casualmente usando template grammaticali
+così che io possa ottenere nuovi esempi di frasi ben formate.
+
+§Descrizione di dettaglio:
+
+*Il sistema dispone di template di struttura frase (es: "The [noun] [verb] the [adjective] [noun]").
+
+*A partire dai dizionari caricati (nouns, verbs, adjectives) il sistema:
+
+	*Seleziona casualmente i termini appropriati.
+
+	*Compone la frase riempiendo i placeholder nei template.
+
+*È previsto l'uso di template generati casualmente o scelti da un elenco predefinito.

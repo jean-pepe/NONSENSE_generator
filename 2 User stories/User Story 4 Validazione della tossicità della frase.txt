@@ -1,0 +1,11 @@
+Come amministratore,
+voglio che il sistema analizzi la tossicità delle frasi generate
+così che io possa garantire che i contenuti siano sicuri e appropriati.
+
+§Descrizione di dettaglio:
+
+*Dopo la generazione di una frase, il sistema invia la frase all'API moderateText di Google.
+
+*Se la frase supera determinati livelli di tossicità o inadeguatezza, viene scartata o segnalata.
+
+*L’utente può scegliere di vedere un messaggio di errore o ricevere una nuova frase valida.
