@@ -1,0 +1,18 @@
+
+@startuml
+actor User
+participant System
+participant SentenceAnalyzer
+participant LanguageAPI
+participant WordDictionary
+
+User -> System : Inserisce frase
+System -> SentenceAnalyzer : analyzeSyntax(inputText)
+SentenceAnalyzer -> LanguageAPI : Richiesta analisi sintattica
+LanguageAPI --> SentenceAnalyzer : Risposta struttura + termini
+SentenceAnalyzer -> SentenceAnalyzer : extractTerms()
+SentenceAnalyzer -> SentenceAnalyzer : validateSyntax()
+SentenceAnalyzer --> System : Risultati analisi
+SentenceAnalyzer -> WordDictionary : Aggiunta nuovi termini (opzionale)
+System -> User : Mostra analisi
+@enduml

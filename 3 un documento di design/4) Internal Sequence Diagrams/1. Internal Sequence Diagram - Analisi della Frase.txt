@@ -1,0 +1,32 @@
+User
+ |
+ | (invia frase)
+ V
+System
+ |
+ | -- analyzeSyntax(inputText)
+ V
+SentenceAnalyzer
+ |
+ | -- call API for syntax analysis
+ V
+LanguageAPI
+ |
+ | -- response (structure, terms)
+ V
+SentenceAnalyzer
+ |
+ | -- extractTerms()
+ | -- validateSyntax()
+ |
+ | (optional: aggiorna dizionari)
+ V
+WordDictionary
+ |
+ | (aggiunta nuovi termini)
+ V
+System
+ |
+ | (mostra risultato analisi)
+ V
+User

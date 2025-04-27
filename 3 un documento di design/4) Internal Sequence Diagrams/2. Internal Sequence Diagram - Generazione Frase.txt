@@ -1,0 +1,41 @@
+User
+ |
+ | (richiesta generazione frase)
+ V
+System
+ |
+ | -- selectTemplate()
+ V
+SentenceTemplate
+ |
+ | -- getPlaceholders()
+ V
+System
+ |
+ | -- getRandomWord() per ogni placeholder
+ V
+WordDictionary
+ |
+ | (fornisce parole)
+ V
+System
+ |
+ | -- generateSentence()
+ V
+SentenceGenerator
+ |
+ | -- validate(sentence)
+ V
+ToxicityValidator
+ |
+ | -- ritorna risultato validazione
+ V
+SentenceGenerator
+ |
+ | (frase validata)
+ V
+System
+ |
+ | (mostra frase all'utente)
+ V
+User
