@@ -16,9 +16,9 @@ public class Analyzator {
 	private String sentence;
 	private Map<String, List<String>> words;
 	
-	public Analyzator(String sentence) {
+	public Analyzator(String sentence) throws IOException {
 		language = LanguageServiceClient.create();
-        doc = Document.newBuilder().setContent(text).setType(Document.Type.PLAIN_TEXT).build();
+        doc = Document.newBuilder().setContent(sentence).setType(Document.Type.PLAIN_TEXT).build();
         sintax = language.analyzeSyntax(doc);
         
         words = new HashMap<>();
