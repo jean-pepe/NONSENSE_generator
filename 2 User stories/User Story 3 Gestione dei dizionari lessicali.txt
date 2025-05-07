@@ -1,6 +1,8 @@
-Come sviluppatore,
-voglio che i dizionari di nomi, verbi, aggettivi e strutture di frase siano caricati in fase di inizializzazione
-così che ogni classe possa accedere a liste aggiornabili di termini e strutture.
+
+
+As a developer,
+I want that the files of verbs, nouns, adjectives and sentence templates are loaded at init time,
+so that every class can access the updated list.
 
 §Descrizione di dettaglio:
 
@@ -10,4 +12,3 @@ così che ogni classe possa accedere a liste aggiornabili di termini e strutture
 
 *Ogni classe può fornire un termine casuale alla richiesta.
 
-*È prevista la possibilità di aggiungere termini alle liste dinamicamente per arricchirle.

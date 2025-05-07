@@ -1,6 +1,8 @@
-Come utente,
-voglio salvare le frasi generate in diversi formati
-così che io possa riutilizzarle successivamente.
+
+
+As a user,
+I want to save the resulting sentences or morphologies in various formats,
+so that I can reuse them later.
 
 §Descrizione di dettaglio:
 
@@ -8,10 +10,7 @@ così che io possa riutilizzarle successivamente.
 
 	*Solo la frase.
 
-	*La morfologia associata (struttura grammaticale).
+	*La struttura grammaticale.
 
 *I file possono essere esportati in diversi formati: .json, .xml, .txt.
 
-*I dati vengono salvati in un "bucket" locale o in uno storage cloud specificato.
-
-*È possibile selezionare il tempo verbale (passato, presente, futuro) prima della generazione.

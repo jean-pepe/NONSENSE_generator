@@ -2,10 +2,13 @@ Come amministratore,
 voglio che il sistema analizzi la tossicità delle frasi generate
 così che io possa garantire che i contenuti siano sicuri e appropriati.
 
+As an administrator,
+I want the system to analyse the generated sentence toxicity,
+so that I can guarantee that the sentence is appropriate.
 §Descrizione di dettaglio:
 
 *Dopo la generazione di una frase, il sistema invia la frase all'API moderateText di Google.
 
-*Se la frase supera determinati livelli di tossicità o inadeguatezza, viene scartata o segnalata.
+*Se la frase supera determinati livelli di tossicità o inadeguatezza, viene scartata.
 
-*L’utente può scegliere di vedere un messaggio di errore o ricevere una nuova frase valida.
+

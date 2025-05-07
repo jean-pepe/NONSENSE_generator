@@ -1,0 +1,15 @@
+As a user,
+I want to be able to select the sentence template from a list of pre-determined templates,
+so that I can generate the sentence with the structure that I want
+
+L’utente può vedere una lista di template predefiniti tra cui scegliere.
+
+
+Dopo la selezione di un template, la frase generata segue la struttura corrispondente.
+
+
+Se l’utente non seleziona alcun template, viene usato un template casuale.
+
+
+L’utente può cambiare template e rigenerare la frase in base alla nuova struttura.
+
