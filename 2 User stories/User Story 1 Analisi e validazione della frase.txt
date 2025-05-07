@@ -13,7 +13,17 @@ L'utente inserisce una frase attraverso l'interfaccia.
 	*	Validare se la frase è corretta grammaticalmente.
 
 	*	Estrarre e classificare i termini (nouns, verbs, adjectives).
-	*	Genera una frase grammaticalmente corretta da l’input dato.
+
+	*	Il sistema dispone di template di struttura frase 
+		(es: "The [noun] [verb] the [adjective] [noun]").
+
+*A partire dai dizionari caricati (nouns, verbs, adjectives) il sistema:
+
+	*	Seleziona casualmente i termini appropriati.
+
+	*	Compone la frase riempiendo i placeholder nei template.
+
+*Genera una frase grammaticalmente corretta da l’input dato.
 
 
 
