@@ -1,17 +1,20 @@
-Come utente,
-voglio poter fornire una frase in input
-così che il sistema analizzi la struttura grammaticale, estragga nomi, verbi e aggettivi, e validi la correttezza sintattica.
+As a user,
+I want to give a sentence as an input,
+so that the system gives me a randomly generated correct sentence as an output.
 
-§Descrizione di dettaglio:
+Descrizione di dettaglio:
 
-*L'utente inserisce una frase attraverso l'interfaccia.
+L'utente inserisce una frase attraverso l'interfaccia.
 
-*Il sistema usa Google Cloud Natural Language API (analyzeSyntax) per:
+*Il sistema usa le API per:
 
 	*	Analizzare la struttura sintattica della frase.
 
 	*	Validare se la frase è corretta grammaticalmente.
 
 	*	Estrarre e classificare i termini (nouns, verbs, adjectives).
+	*	Genera una frase grammaticalmente corretta da l’input dato.
 
-*L'utente può opzionalmente visualizzare l'albero sintattico prodotto.
+
+
+
