@@ -23,6 +23,12 @@ public class Adjective {
             System.err.println("Error reading file: " + e.getMessage());
         }
     }
+
+    public static addAdjectives(List<String> adjectives){
+	   for (String s : adjectives){
+		   dictionaryAdj.add(s);
+	 }
+     }
     
     public Adjective() {
     	Random rand = new Random();
