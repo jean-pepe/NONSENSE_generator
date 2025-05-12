@@ -16,6 +16,7 @@ public class Program {
 		System.out.println("Good morning! Welcome to our Nonsense Generator!");
 		String sentence;
 		String answer;
+		String generated;
 		
 		while(true) {
 			
@@ -33,13 +34,15 @@ public class Program {
 				
 			System.out.println("In which verbal tense do you want your new super special sentence?");
 			answer = input.nextLine();
-			//llamamos a generator
+			generated = Generator.generateSentence();
 			System.out.println("Here's your new sentence:");
-			//imprimimos la frase
+			System.out.println("\t" + generated);
 			
 			System.out.println("I know you have faith in us... but if you don't, do you want to validate the sentence toxicity?");
 			System.out.println("Write YES if positive, anything else if negative");
-			if (answer == "YES") //llamamos a la función
+			if (answer == "YES") {
+				System.out.println(Validator.validateSentence(generated));
+			}
 			
 			System.out.println("Thanks for using our Nonsense Generator! Do you want to try again? If positive, write YES");
 			if (answer != "YES") {
