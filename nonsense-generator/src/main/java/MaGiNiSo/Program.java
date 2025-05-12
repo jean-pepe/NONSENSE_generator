@@ -42,6 +42,7 @@ public class Program {
 			
 			System.out.println("I know you have faith in us... but if you don't, do you want to validate the sentence toxicity?");
 			System.out.println("Write YES if positive, anything else if negative");
+			answer = input.nextLine();
 			if (answer.equals("YES")) {
 				System.out.println(Validator.validateSentence(generated));
 			}
