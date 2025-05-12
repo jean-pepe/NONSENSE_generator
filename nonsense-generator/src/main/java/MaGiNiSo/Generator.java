@@ -27,6 +27,20 @@ public class Generator {
 				a = new Adjective();
 				sentence += a.getAdjective();
 			}
+			
+			else if (s.equals("[noun].")) {
+				n = new Noun();
+				sentence += n.getNoun() + ".";
+			}
+			else if (s.equals("[verb].")) {
+				v = new Verb(time);
+				sentence += v.getVerb() + ".";
+			}
+			else if (s.equals("[adjective].")) {
+				a = new Adjective();
+				sentence += a.getAdjective() + ".";
+			}
+			
 			else sentence += s;
 			sentence += " ";
 		}
