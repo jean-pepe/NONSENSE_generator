@@ -15,7 +15,7 @@ public class SentenceStructure {
     //Mehtod for creating the dictionary of Sentence Structures
     public static void setDictionaryStruc() {
     	try {
-            dictionaryStruc = Files.readAllLines(Paths.get("SentenceStructures.txt"));
+            dictionaryStruc = Files.readAllLines(Paths.get("src/main/java/MaGiNiSo/SentenceStructures.txt"));
         } catch (IOException e) {
             System.err.println("Error reading file: " + e.getMessage());
         }

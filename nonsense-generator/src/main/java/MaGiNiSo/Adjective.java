@@ -14,7 +14,7 @@ public class Adjective {
     //Method for creating the dictionary of Adjectives
     public static void setDictionaryAdj() {
     	try {
-            dictionaryAdj = Files.readAllLines(Paths.get("Adjectives.txt"));
+            dictionaryAdj = Files.readAllLines(Paths.get("src/main/java/MaGiNiSo/Adjectives.txt"));
 
         } catch (IOException e) {
             System.err.println("Error reading file: " + e.getMessage());
@@ -22,7 +22,7 @@ public class Adjective {
     }
 
     //Method for adding adjectives from the input sentence to the dictionary
-    public static addAdjectives(List<String> adjectives){
+    public static void addAdjectives(List<String> adjectives){
 	   for (String s : adjectives){
 		   dictionaryAdj.add(s);
 	 }

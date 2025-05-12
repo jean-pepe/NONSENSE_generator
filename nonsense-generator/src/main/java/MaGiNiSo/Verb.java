@@ -13,7 +13,7 @@ public class Verb {
     //Method for setting the diccionary
     public static void setDictionaryVerb() {
     	
-    	try (BufferedReader reader = new BufferedReader(new FileReader("Verbs.txt"))) {
+    	try (BufferedReader reader = new BufferedReader(new FileReader("src/main/java/MaGiNiSo/Verbs.txt"))) {
     	    String line;
 	    //reading each line of the file. Structure: "category verb"
     	    while ((line = reader.readLine()) != null) {
@@ -36,19 +36,19 @@ public class Verb {
 
     //Method for adding the verbs form the input sentence to the Dictionary. 
     //It clasifies them depending on the verbal tense.
-    public static addVerbs(List<String> verbs, String time){
-    	If (time != "past" && time != "future" && time != "present") 
+    public static void addVerbs(List<String> verbs, String time){
+    	if (time != "past" && time != "future" && time != "present") 
 	    throw new IllegalArgumentException("Verbal tense non admitted. Admitted tenses: past, present, future");
 	    
          for (String s : verbs){
-		   dictionaryVerb.put(tempo, s);
+        	 dictionaryVerb.computeIfAbsent(time, k -> new ArrayList<>()).add(s);
 	 }
       }
 
     //Constructor of an object Verb (=selecting a random verb basically, in the tense selected)
-    public Verb(String time) {
+    public void Verb(String time) {
 	//Here, as we are the ones asking it sould be a correct tense... But is never too much to check it :)
-	If (time != "past" && time != "future" && time != "present") 
+	if (time != "past" && time != "future" && time != "present") 
 	    throw new IllegalArgumentException("Verbal tense non admitted. Admitted tenses: past, present, future");
 	    
     	Random rand = new Random();

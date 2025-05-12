@@ -14,14 +14,14 @@ public class Noun {
     //Create the dictionary based on the file 
     public static void setDictionaryNoun() {
     	try {
-            dictionaryNoun = Files.readAllLines(Paths.get("Nouns.txt"));
+            dictionaryNoun = Files.readAllLines(Paths.get("src/main/java/MaGiNiSo/Nouns.txt"));
         } catch (IOException e) {
             System.err.println("Error reading file: " + e.getMessage());
         }
     }
 
    //This is the method for adding nouns into the dictionary, that we have selected from the input sentence
-   public static addNouns(List<String> nouns){
+   public static void addNouns(List<String> nouns){
 	   for (String s : nouns){
 		   dictionaryNoun.add(s);
 	 }
