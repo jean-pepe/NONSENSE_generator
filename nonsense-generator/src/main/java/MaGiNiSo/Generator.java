@@ -2,7 +2,7 @@ package MaGiNiSo;
 
 public class Generator {
 			
-	public static String generateSentence() {
+	public static String generateSentence(String time) {
 		
 		//generate a random sentence structure
 		String sentence = "";
@@ -20,7 +20,7 @@ public class Generator {
 				sentence += n.getNoun();
 			}
 			else if (s == "[verb]") {
-				v = new Verb();
+				v = new Verb(time);
 				sentence += v.getVerb();
 			}
 			else if (s == "[adjective]") {

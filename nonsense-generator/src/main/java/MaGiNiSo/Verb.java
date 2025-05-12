@@ -46,7 +46,7 @@ public class Verb {
       }
 
     //Constructor of an object Verb (=selecting a random verb basically, in the tense selected)
-    public void Verb(String time) {
+    public Verb(String time) {
 	//Here, as we are the ones asking it sould be a correct tense... But is never too much to check it :)
 	if (time != "past" && time != "future" && time != "present") 
 	    throw new IllegalArgumentException("Verbal tense non admitted. Admitted tenses: past, present, future");

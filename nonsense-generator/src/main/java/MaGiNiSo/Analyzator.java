@@ -42,31 +42,40 @@ public class Analyzator {
         this.unknown = new ArrayList<>();
     }
 
-    public void analyzeSyntax(String sentence) throws IOException {
-        String urlString = "https://language.googleapis.com/v1/documents:analyzeSyntax?key=" + API_KEY;
-
-        String jsonInputString = "{" + "\"document\": {" + "\"type\": \"PLAIN_TEXT\"," + "\"content\": \"" + sentence + "\"" + "}," + "\"encodingType\": \"UTF8\"" + "}";
-
-        URL url = new URL(urlString);
-        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-        conn.setRequestMethod("POST");
-        conn.setRequestProperty("Content-Type", "application/json");
-        conn.setDoOutput(true);
-
-        try (OutputStream os = conn.getOutputStream()) {
-            byte[] input = jsonInputString.getBytes(StandardCharsets.UTF_8);
-            os.write(input, 0, input.length);
-        }
-
-        StringBuilder response = new StringBuilder();
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8))) {
-            String responseLine;
-            while ((responseLine = br.readLine()) != null) {
-                response.append(responseLine.trim());
-            }
-        }
-
-        processResponse(response.toString());
+    public void analyzeSyntax(String sentence, String time) {
+    	try {
+	        String urlString = "https://language.googleapis.com/v1/documents:analyzeSyntax?key=" + API_KEY;
+	
+	        String jsonInputString = "{" + "\"document\": {" + "\"type\": \"PLAIN_TEXT\"," + "\"content\": \"" + sentence + "\"" + "}," + "\"encodingType\": \"UTF8\"" + "}";
+	
+	        URL url = new URL(urlString);
+	        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+	        conn.setRequestMethod("POST");
+	        conn.setRequestProperty("Content-Type", "application/json");
+	        conn.setDoOutput(true);
+	
+	        try (OutputStream os = conn.getOutputStream()) {
+	            byte[] input = jsonInputString.getBytes(StandardCharsets.UTF_8);
+	            os.write(input, 0, input.length);
+	        }
+	
+	        StringBuilder response = new StringBuilder();
+	        try (BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8))) {
+	            String responseLine;
+	            while ((responseLine = br.readLine()) != null) {
+	                response.append(responseLine.trim());
+	            }
+	        }
+	
+	        processResponse(response.toString());
+	        
+	        Noun.addNouns(nouns);
+	        Verb.addVerbs(verbs, time);
+	        Adjective.addAdjectives(adjectives);
+	        
+    	} catch (IOException e) {
+    		System.err.println("Error connecting to the API " + e.getMessage());
+    	}
     }
 
     private void processResponse(String jsonResponse) {

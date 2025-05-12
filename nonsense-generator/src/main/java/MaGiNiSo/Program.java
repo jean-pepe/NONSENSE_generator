@@ -14,6 +14,7 @@ public class Program {
 		
 		Scanner input = new Scanner(System.in);
 		System.out.println("Good morning! Welcome to our Nonsense Generator!");
+		Analyzator analyze;
 		String sentence;
 		String answer;
 		String generated;
@@ -24,17 +25,18 @@ public class Program {
 			sentence = input.nextLine();
 			System.out.println("Which is the verbal tense of your sentence? past/present/future");
 			answer = input.nextLine();
-			//llamamos a analizar la frase
+			analyze = new Analyzator();
+			analyze.analyzeSyntax(sentence, answer);
 			
 			System.out.println("Do you want the sintactic tree of your sentence?");
 			System.out.println("If your answer is yes, please write YES (in capital letters, with enthusiasm), if not,"
 					+ " please write anything else");
 			answer = input.nextLine();
-			if (answer == "YES") //llamamos a la función
+			if (answer == "YES") analyze.printSyntacticTree();
 				
 			System.out.println("In which verbal tense do you want your new super special sentence?");
 			answer = input.nextLine();
-			generated = Generator.generateSentence();
+			generated = Generator.generateSentence(answer);
 			System.out.println("Here's your new sentence:");
 			System.out.println("\t" + generated);
 			

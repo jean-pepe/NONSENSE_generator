@@ -39,7 +39,7 @@ public class Validator {
 	        return processResponse(response.toString());
     	}
     	catch (IOException e) {
-    		System.err.println("Error connecting to the API server");
+    		System.err.println("Error connecting to the API server " + e.getMessage());
     		return null;
     	}
     }
