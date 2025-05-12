@@ -6,6 +6,12 @@ public class Program {
 
 	public static void main(String[] args) {
 		
+		//setting the dictionaries
+		Noun.setDictionaryNoun();
+		Verb.setDictionaryVerb();
+		Adjective.setDictionaryAdj();
+		SentenceStructure.setDictionaryStruc();
+		
 		Scanner input = new Scanner(System.in);
 		System.out.println("Good morning! Welcome to our Nonsense Generator!");
 		String sentence;
