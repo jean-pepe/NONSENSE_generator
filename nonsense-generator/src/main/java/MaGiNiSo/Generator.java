@@ -28,6 +28,7 @@ public class Generator {
 				sentence += a.getAdjective();
 			}
 			else sentence += s;
+			sentence += " ";
 		}
 		
 		return sentence;

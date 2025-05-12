@@ -32,7 +32,7 @@ public class Program {
 			System.out.println("If your answer is yes, please write YES (in capital letters, with enthusiasm), if not,"
 					+ " please write anything else");
 			answer = input.nextLine();
-			if (answer == "YES") analyze.printSyntacticTree();
+			if (answer.equals("YES")) analyze.printSyntacticTree();
 				
 			System.out.println("In which verbal tense do you want your new super special sentence?");
 			answer = input.nextLine();
@@ -42,12 +42,13 @@ public class Program {
 			
 			System.out.println("I know you have faith in us... but if you don't, do you want to validate the sentence toxicity?");
 			System.out.println("Write YES if positive, anything else if negative");
-			if (answer == "YES") {
+			if (answer.equals("YES")) {
 				System.out.println(Validator.validateSentence(generated));
 			}
 			
 			System.out.println("Thanks for using our Nonsense Generator! Do you want to try again? If positive, write YES");
-			if (answer != "YES") {
+			answer = input.nextLine();
+			if (!answer.equals("YES")) {
 				System.out.println("Good bye!");
 				break;
 			}
