@@ -15,15 +15,15 @@ public class Generator {
 		Verb v;
 		Adjective a;
 		for (String s : parts) {
-			if (s == "[noun]") {
+			if (s.equals("[noun]")) {
 				n = new Noun();
 				sentence += n.getNoun();
 			}
-			else if (s == "[verb]") {
+			else if (s.equals("[verb]")) {
 				v = new Verb(time);
 				sentence += v.getVerb();
 			}
-			else if (s == "[adjective]") {
+			else if (s.equals("[adjective]")) {
 				a = new Adjective();
 				sentence += a.getAdjective();
 			}
