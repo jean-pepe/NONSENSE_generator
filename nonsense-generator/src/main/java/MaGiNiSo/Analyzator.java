@@ -15,11 +15,31 @@ public class Analyzator {
     private List<String> nouns;
     private List<String> verbs;
     private List<String> adjectives;
+    private List<String> adverbs;
+    private List<String> conjunction;
+    private List<String> determinant;
+    private List<String> pronouns;
+    private List<String> punctuation;
+    private List<String> number;
+    private List<String> preposition;
+    private List<String> particle;
+    private List<String> other;
+    private List<String> unknown;
 
     public Analyzator() {
         this.nouns = new ArrayList<>();
         this.verbs = new ArrayList<>();
         this.adjectives = new ArrayList<>();
+        this.adverbs = new ArrayList<>();
+        this.conjunction = new ArrayList<>();
+        this.determinant = new ArrayList<>();
+        this.pronouns = new ArrayList<>();
+        this.punctuation = new ArrayList<>();
+        this.number = new ArrayList<>();
+        this.preposition = new ArrayList<>();
+        this.particle = new ArrayList<>();
+        this.other = new ArrayList<>();
+        this.unknown = new ArrayList<>();
     }
 
     public void analyzeSyntax(String sentence) throws IOException {
@@ -32,11 +52,12 @@ public class Analyzator {
         conn.setRequestMethod("POST");
         conn.setRequestProperty("Content-Type", "application/json");
         conn.setDoOutput(true);
-	    
+
         try (OutputStream os = conn.getOutputStream()) {
             byte[] input = jsonInputString.getBytes(StandardCharsets.UTF_8);
             os.write(input, 0, input.length);
         }
+
         StringBuilder response = new StringBuilder();
         try (BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8))) {
             String responseLine;
@@ -44,6 +65,7 @@ public class Analyzator {
                 response.append(responseLine.trim());
             }
         }
+
         processResponse(response.toString());
     }
 
@@ -55,7 +77,6 @@ public class Analyzator {
             JSONObject token = tokens.getJSONObject(i);
             String word = token.getJSONObject("text").getString("content");
             String category = token.getJSONObject("partOfSpeech").getString("tag");
-
             switch (category) {
                 case "NOUN":
                     nouns.add(word);
@@ -66,10 +87,56 @@ public class Analyzator {
                 case "ADJ":
                     adjectives.add(word);
                     break;
+                case "ADV":
+                    adverbs.add(word);
+                    break;
+                case "CONJ":
+                    conjunction.add(word);
+                    break;
+                case "DET":
+                    determinant.add(word);
+                    break;
+                case "PRON":
+                    pronouns.add(word);
+                    break;
+                case "PUNCT":
+                    punctuation.add(word);
+                    break;
+                case "NUM":
+                    number.add(word);
+                    break;
+                case "ADP":
+                    preposition.add(word);
+                    break;
+                case "PRT":
+                    particle.add(word);
+                    break;
+                case "X":
+                    other.add(word);
+                    break;
+                case "UNKNOWN":
+                    unknown.add(word);
+                    break;
             }
         }
     }
-
+    
+    public void printSyntacticTree() {
+    	System.out.println("The syntactic tree is:");
+        System.out.println("NOUN: " + getNouns());
+        System.out.println("VERB: " + getVerbs());
+        System.out.println("ADJECTIVE: " + getAdjectives());
+        System.out.println("ADV: " + getAdverbs());
+        System.out.println("CONJ: " + getConjunction());
+        System.out.println("PRON: " + getPronouns());
+        System.out.println("PUNCT: " + getPunctuation());
+        System.out.println("NUM: " + getNumber());
+        System.out.println("PREPOSITION: " + getPreposition());
+        System.out.println("PRT: " + getParticle());
+        System.out.println("X: " + getOther());
+        System.out.println("UNKNOWN: " + getUnknown());
+    }
+    
     public List<String> getNouns() {
         return Collections.unmodifiableList(nouns);
     }
@@ -81,4 +148,44 @@ public class Analyzator {
     public List<String> getAdjectives() {
         return Collections.unmodifiableList(adjectives);
     }
+    
+    public List<String> getAdverbs() {
+        return Collections.unmodifiableList(adverbs);
+    }
+
+    public List<String> getConjunction() {
+        return Collections.unmodifiableList(conjunction);
+    }
+
+    public List<String> getDeterminant() {
+        return Collections.unmodifiableList(determinant);
+    }
+    
+    public List<String> getPronouns() {
+        return Collections.unmodifiableList(pronouns);
+    }
+
+    public List<String> getPunctuation() {
+        return Collections.unmodifiableList(punctuation);
+    }
+
+    public List<String> getNumber() {
+        return Collections.unmodifiableList(number);
+    }
+    public List<String> getPreposition() {
+        return Collections.unmodifiableList(preposition);
+    }
+    
+    public List<String> getParticle() {
+        return Collections.unmodifiableList(particle);
+    }
+
+    public List<String> getOther() {
+        return Collections.unmodifiableList(other);
+    }
+
+    public List<String> getUnknown() {
+        return Collections.unmodifiableList(unknown);
+    }
+	
 }
