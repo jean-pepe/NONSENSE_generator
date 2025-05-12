@@ -1,58 +1,84 @@
 package MaGiNiSo;
 
-import com.google.cloud.language.v1.AnalyzeSyntaxResponse;
-import com.google.cloud.language.v1.Document;
-import com.google.cloud.language.v1.LanguageServiceClient;
-import com.google.cloud.language.v1.Token;
-
-import java.io.IOException;
+import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 public class Analyzator {
-		
-	private LanguageServiceClient language;
-	private Document doc;
-	private AnalyzeSyntaxResponse sintax;
-	private String sentence;
-	private Map<String, List<String>> words;
-	
-	public Analyzator(String sentence) throws IOException {
-		language = LanguageServiceClient.create();
-        doc = Document.newBuilder().setContent(sentence).setType(Document.Type.PLAIN_TEXT).build();
-        sintax = language.analyzeSyntax(doc);
-        
-        words = new HashMap<>();
-        words.put("NOUN", new ArrayList<>());
-        words.put("VERB", new ArrayList<>());
-        words.put("ADJ", new ArrayList<>());
-        
-        for (Token token : sintax.getTokensList()) {
-            String part = token.getPartOfSpeech().getTag().name();
-            String word = token.getText().getContent();
-            if (words.containsKey(part)) {
-                words.get(part).add(word);
+
+    private static final String API_KEY = "AIzaSyC7YZO32MGS-jqo103fDBK-yDZJXPPOFe8"; 
+
+    private List<String> nouns;
+    private List<String> verbs;
+    private List<String> adjectives;
+
+    public Analyzator() {
+        this.nouns = new ArrayList<>();
+        this.verbs = new ArrayList<>();
+        this.adjectives = new ArrayList<>();
+    }
+
+    public void analyzeSyntax(String sentence) throws IOException {
+        String urlString = "https://language.googleapis.com/v1/documents:analyzeSyntax?key=" + API_KEY;
+
+        String jsonInputString = "{" + "\"document\": {" + "\"type\": \"PLAIN_TEXT\"," + "\"content\": \"" + sentence + "\"" + "}," + "\"encodingType\": \"UTF8\"" + "}";
+
+        URL url = new URL(urlString);
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("POST");
+        conn.setRequestProperty("Content-Type", "application/json");
+        conn.setDoOutput(true);
+	    
+        try (OutputStream os = conn.getOutputStream()) {
+            byte[] input = jsonInputString.getBytes(StandardCharsets.UTF_8);
+            os.write(input, 0, input.length);
+        }
+        StringBuilder response = new StringBuilder();
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8))) {
+            String responseLine;
+            while ((responseLine = br.readLine()) != null) {
+                response.append(responseLine.trim());
             }
         }
-	}
-	
-	public void validateStructure(){
-		//show in screen the Document doc
-	}
-	
-	public List<String> getVerbs() {
-		List<String> result = words.get("VERB");
-		return Collections.unmodifiableList(result);
-	}
-	
-	public List<String> getNouns() {
-		List<String> result = words.get("NOUN");
-		return Collections.unmodifiableList(result);
-	}
-	
-	public List<String> getAdjectives() {
-		List<String> result = words.get("ADJ");
-		return Collections.unmodifiableList(result);
-	}
+        processResponse(response.toString());
+    }
 
-	
+    private void processResponse(String jsonResponse) {
+        JSONObject jsonObject = new JSONObject(jsonResponse);
+        JSONArray tokens = jsonObject.getJSONArray("tokens");
+
+        for (int i = 0; i < tokens.length(); i++) {
+            JSONObject token = tokens.getJSONObject(i);
+            String word = token.getJSONObject("text").getString("content");
+            String category = token.getJSONObject("partOfSpeech").getString("tag");
+
+            switch (category) {
+                case "NOUN":
+                    nouns.add(word);
+                    break;
+                case "VERB":
+                    verbs.add(word);
+                    break;
+                case "ADJ":
+                    adjectives.add(word);
+                    break;
+            }
+        }
+    }
+
+    public List<String> getNouns() {
+        return Collections.unmodifiableList(nouns);
+    }
+
+    public List<String> getVerbs() {
+        return Collections.unmodifiableList(verbs);
+    }
+
+    public List<String> getAdjectives() {
+        return Collections.unmodifiableList(adjectives);
+    }
 }
