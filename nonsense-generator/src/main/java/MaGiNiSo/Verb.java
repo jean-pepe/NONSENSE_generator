@@ -37,7 +37,7 @@ public class Verb {
     //Method for adding the verbs form the input sentence to the Dictionary. 
     //It clasifies them depending on the verbal tense.
     public static void addVerbs(List<String> verbs, String time){
-    	if (time != "past" && time != "future" && time != "present") 
+    	if (!time.equals("past") && !time.equals("future") && !time.equals("present")) 
 	    throw new IllegalArgumentException("Verbal tense non admitted. Admitted tenses: past, present, future");
 	    
          for (String s : verbs){
@@ -48,7 +48,7 @@ public class Verb {
     //Constructor of an object Verb (=selecting a random verb basically, in the tense selected)
     public Verb(String time) {
 	//Here, as we are the ones asking it sould be a correct tense... But is never too much to check it :)
-	if (time != "past" && time != "future" && time != "present") 
+    	if (!time.equals("past") && !time.equals("future") && !time.equals("present")) 
 	    throw new IllegalArgumentException("Verbal tense non admitted. Admitted tenses: past, present, future");
 	    
     	Random rand = new Random();
