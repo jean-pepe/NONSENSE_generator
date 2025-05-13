@@ -2,7 +2,7 @@ package MaGiNiSo;
 
 import java.util.List;
 
-public class Adjective {
+public class Adjective extends Word{
 	
 	public static void setDictionary() {
 		Word.createDictionary("src/main/java/MaGiNiSo/Adjectives.txt");
