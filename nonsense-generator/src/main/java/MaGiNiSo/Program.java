@@ -3,14 +3,16 @@ package MaGiNiSo;
 import java.util.Scanner;
 
 public class Program {
-
+	
+	//Setting the dictionaries
+	protected static Dictionary Nouns = new Dictionary("src/main/java/MaGiNiSo/Nouns.txt");
+	protected static Dictionary VerbsPresent = new Dictionary("src/main/java/MaGiNiSo/VerbsPresent.txt");
+	protected static Dictionary VerbsPast = new Dictionary("src/main/java/MaGiNiSo/VerbsPast.txt");
+	protected static Dictionary VerbsFuture = new Dictionary("src/main/java/MaGiNiSo/VerbsFuture.txt");
+	protected static Dictionary Adjectives = new Dictionary("src/main/java/MaGiNiSo/Adjectives.txt");
+	protected static Dictionary SentenceStructures = new Dictionary("src/main/java/MaGiNiSo/SentenceStructures.txt");
+	
 	public static void main(String[] args) {
-		
-		//setting the dictionaries
-		Noun.setDictionaryNoun();
-		Verb.setDictionaryVerb();
-		Adjective.setDictionaryAdj();
-		SentenceStructure.setDictionaryStruc();
 		
 		Scanner input = new Scanner(System.in);
 		System.out.println("Good morning! Welcome to our Nonsense Generator!");

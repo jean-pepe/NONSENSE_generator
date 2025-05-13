@@ -43,6 +43,19 @@ public class Analyzator {
     }
 
     public void analyzeSyntax(String sentence, String time) {
+    	
+    	//We select the dictionary of verbs that we are going to use, and copy the reference
+		Dictionary dicVerbs;
+    	if (time.equals("present")) {
+           	dicVerbs = Program.VerbsPresent;
+        } else if (time.equals("past")) {
+           	dicVerbs = Program.VerbsPast;
+        } else if (time.equals("future")) {
+           	dicVerbs = Program.VerbsFuture;
+        } else {
+           	throw new IllegalArgumentException("Invalid verbal tense, tenses admitted: present/past/future");
+        }
+    	
     	try {
 	        String urlString = "https://language.googleapis.com/v1/documents:analyzeSyntax?key=" + API_KEY;
 	
@@ -69,9 +82,9 @@ public class Analyzator {
 	
 	        processResponse(response.toString());
 	        
-	        Noun.addNouns(nouns);
-	        Verb.addVerbs(verbs, time);
-	        Adjective.addAdjectives(adjectives);
+	        Program.Nouns.add(nouns);
+	        Program.Adjectives.add(adjectives);
+	        dicVerbs.add(verbs);
 	        
     	} catch (IOException e) {
     		System.err.println("Error connecting to the API " + e.getMessage());
