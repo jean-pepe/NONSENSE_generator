@@ -5,12 +5,12 @@ import java.util.Scanner;
 public class Program {
 	
 	//Setting the dictionaries
-	protected static Dictionary Nouns = new Dictionary("src/main/java/MaGiNiSo/Nouns.txt");
-	protected static Dictionary VerbsPresent = new Dictionary("src/main/java/MaGiNiSo/VerbsPresent.txt");
-	protected static Dictionary VerbsPast = new Dictionary("src/main/java/MaGiNiSo/VerbsPast.txt");
-	protected static Dictionary VerbsFuture = new Dictionary("src/main/java/MaGiNiSo/VerbsFuture.txt");
-	protected static Dictionary Adjectives = new Dictionary("src/main/java/MaGiNiSo/Adjectives.txt");
-	protected static Dictionary SentenceStructures = new Dictionary("src/main/java/MaGiNiSo/SentenceStructures.txt");
+	protected static Dictionary nouns = new Dictionary("src/main/java/MaGiNiSo/Nouns.txt");
+	protected static Dictionary verbsPresent = new Dictionary("src/main/java/MaGiNiSo/VerbsPresent.txt");
+	protected static Dictionary verbsPast = new Dictionary("src/main/java/MaGiNiSo/VerbsPast.txt");
+	protected static Dictionary verbsFuture = new Dictionary("src/main/java/MaGiNiSo/VerbsFuture.txt");
+	protected static Dictionary adjectives = new Dictionary("src/main/java/MaGiNiSo/Adjectives.txt");
+	protected static SentenceStructures structures = new SentenceStructures("src/main/java/MaGiNiSo/SentenceStructures.txt");
 	
 	public static void main(String[] args) {
 		
@@ -19,6 +19,8 @@ public class Program {
 		Analyzator analyze;
 		String sentence;
 		String answer;
+		String choice;
+		int structure = 0;
 		String generated;
 		
 		while(true) {
@@ -38,7 +40,15 @@ public class Program {
 				
 			System.out.println("In which verbal tense do you want your new super special sentence?");
 			answer = input.nextLine();
-			generated = Generator.generateSentence(answer);
+			System.out.println("Do you want to choose your sentence structure? If positive, write YES");
+			choice = input.nextLine();
+			if (choice.equals("YES")) {
+				System.out.println("Please write the number of the structure");
+				structures.printStructures();
+				structure = input.nextInt();
+			} else structure = 0;
+			
+			generated = Generator.generateSentence(answer, structure);
 			System.out.println("Here's your new sentence:");
 			System.out.println("\t" + generated);
 			

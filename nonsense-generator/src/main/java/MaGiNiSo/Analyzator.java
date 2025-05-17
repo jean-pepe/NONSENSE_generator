@@ -47,11 +47,11 @@ public class Analyzator {
     	//We select the dictionary of verbs that we are going to use, and copy the reference
 		Dictionary dicVerbs;
     	if (time.equals("present")) {
-           	dicVerbs = Program.VerbsPresent;
+           	dicVerbs = Program.verbsPresent;
         } else if (time.equals("past")) {
-           	dicVerbs = Program.VerbsPast;
+           	dicVerbs = Program.verbsPast;
         } else if (time.equals("future")) {
-           	dicVerbs = Program.VerbsFuture;
+           	dicVerbs = Program.verbsFuture;
         } else {
            	throw new IllegalArgumentException("Invalid verbal tense, tenses admitted: present/past/future");
         }
@@ -82,8 +82,8 @@ public class Analyzator {
 	
 	        processResponse(response.toString());
 	        
-	        Program.Nouns.add(nouns);
-	        Program.Adjectives.add(adjectives);
+	        Program.nouns.add(nouns);
+	        Program.adjectives.add(adjectives);
 	        dicVerbs.add(verbs);
 	        
     	} catch (IOException e) {
