@@ -1,5 +1,12 @@
 package MaGiNiSo;
 
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.Files;
+import java.nio.file.StandardOpenOption;
+import java.util.List;
+
 public class Generator {
 			
 	public static String generateSentence(String time) {
@@ -45,6 +52,17 @@ public class Generator {
 			
 			else sentence += s;
 			sentence += " ";
+		}
+		
+		//Save the new sentence and it's morphology (structure) in a txt file (bucket)
+		Path outputPath = Paths.get("src/main/java/MaGiNiSo/Output.txt");
+		List<String> output = List.of("Structure: " + structure, "Sentence: " + sentence);
+		try {
+			//We write our new sentence in the file if the file exists, we create it if it does not exist
+			//This way we can save in the same file all the new sentences
+			Files.write(outputPath, output, StandardOpenOption.APPEND, StandardOpenOption.CREATE);
+		} catch(IOException e) {
+			System.err.println("Error writing file: " + e.getMessage());
 		}
 		
 		return sentence;
