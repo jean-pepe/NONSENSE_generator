@@ -1,0 +1,18 @@
+Structure: The [noun] [verb] the [adjective] [noun] by the [adjective] [noun].
+Sentence: The guitar swim the beautiful guitar by the long cloud. 
+Structure: The [noun] [verb] the [adjective] [noun] by the [adjective] [noun].
+Sentence: The planet dance the long bridge by the angry river. 
+Structure: The [noun] [verb] the [adjective] [noun] with a [adjective] [noun] and [noun].
+Sentence: The apple will create the long bridge with a long bridge and animal. 
+Structure: The [noun] [verb] the [adjective] [noun] in a [adjective] [noun] and [noun].
+Sentence: The animal will teach the quick guitar in a wide river and library. 
+Structure: The [noun] [verb] the [adjective] [noun] by the [adjective] [noun].
+Sentence: The carpet learn the happy city by the wide city. 
+Structure: The [noun] [verb] the [adjective] [noun] over the [adjective] [noun].
+Sentence: The carpet will sing the gigantic teacher over the huge planet. 
+Structure: The [adjective] [noun] [verb] the [adjective] [noun] near a [adjective] [noun].
+Sentence: The short gato will dance the wide bottle near a smooth cloud. 
+Structure: The [adjective] [noun] [verb] the [adjective] [noun] beside a [adjective] [noun].
+Sentence: The beautiful carpet will write the beautiful teacher beside a bright train. 
+Structure: The [adjective] [noun] [verb] the [adjective] [noun] in a [adjective] [noun] and [noun].
+Sentence: The beautiful computer will paint the lazy bridge in a huge guitar and river. 
