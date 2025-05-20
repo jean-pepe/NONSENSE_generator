@@ -1,0 +1,9 @@
+MaGiNiSo\service\Analyzator.class
+MaGiNiSo\service\Dictionary.class
+MaGiNiSo\service\NonSenseService.class
+MaGiNiSo\controller\NonSenseController.class
+MaGiNiSo\service\DictionaryInitializer.class
+MaGiNiSo\NonsenseApplication.class
+MaGiNiSo\service\SentenceStructures.class
+MaGiNiSo\service\Validator.class
+MaGiNiSo\service\Generator.class
