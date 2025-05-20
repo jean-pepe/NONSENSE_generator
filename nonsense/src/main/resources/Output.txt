@@ -1,6 +1,0 @@
-Structure: The [noun] [verb] the [adjective] [noun] near a [adjective] [noun].
-Sentence: The mountain created the lazy window near a noisy bridge. 
-Structure: The [noun] [verb] the [adjective] [noun] in a [adjective] [noun] and [noun].
-Sentence: The planet played the angry teacher in a smooth bottle and cloud. 
-Structure: The [noun] [verb] the [adjective] [noun] near a [adjective] [noun].
-Sentence: The computer studied the rough desk near a elegant camera. 

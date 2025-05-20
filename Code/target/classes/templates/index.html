@@ -1,0 +1,87 @@
+<html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Nonsense Generator</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+<body>
+    <h1>Welcome to the Nonsense Generator!</h1>
+    <form th:action="@{/process}" method="post">
+    	<label>Insert your API Key:</label>
+		<input type="text" name="apiKey" required>
+        <br>
+        <label>Write an input sentence:</label>
+        <input type="text" name="sentence" required>
+        <br>
+        <label>Choose the verbal tense:</label>
+        <select name="tense">
+            <option value="past">Past</option>
+            <option value="present">Present</option>
+            <option value="future">Future</option>
+        </select>
+        <br>
+        <label>Do you want the syntactic tree?</label>
+        <input type="checkbox" name="syntacticTree" value="YES">
+        <br>
+        <label>Choose sentence structure (optional):</label>
+		<select name="numStructure">
+    	<option value="0">Random</option>
+    	<option value="1">The [noun] [verb] the [adjective] [noun] in a [adjective] [noun] and [noun].</option>
+    	<option value="2">The [adjective] [noun] [verb] the [adjective] [noun] on a [adjective] [noun].</option>
+    	<option value="3">The [noun] [verb] the [adjective] [noun] with a [adjective] [noun] and [noun].</option>
+    	<option value="4">The [adjective] [noun] [verb] the [adjective] [noun] at the [adjective] [noun].</option>
+    	<option value="5">The [noun] [verb] the [adjective] [noun] by the [adjective] [noun].</option>
+		<option value="6">The [adjective] [noun] [verb] the [adjective] [noun] under a [adjective] [noun].</option>
+    	<option value="7">The [noun] [verb] the [adjective] [noun] inside a [adjective] [noun] and [noun].</option>
+    	<option value="8">The [adjective] [noun] [verb] the [adjective] [noun] next to a [adjective] [noun].</option>
+    	<option value="9">The [noun] [verb] the [adjective] [noun] with a [adjective] [noun] and [noun].</option>
+    	<option value="10">The [adjective] [noun] [verb] the [adjective] [noun] near a [adjective] [noun].</option>
+    	<option value="11">The [noun] [verb] the [adjective] [noun] across the [adjective] [noun].</option>
+    	<option value="12">The [adjective] [noun] [verb] the [adjective] [noun] on top of a [adjective] [noun].</option>
+    	<option value="13">The [noun] [verb] the [adjective] [noun] down the [adjective] [noun].</option>
+    	<option value="14">The [adjective] [noun] [verb] the [adjective] [noun] in front of a [adjective] [noun].</option>
+    	<option value="15">The [noun] [verb] the [adjective] [noun] through a [adjective] [noun].</option>
+    	<option value="16">The [adjective] [noun] [verb] the [adjective] [noun] from a [adjective] [noun].</option>
+    	<option value="17">The [noun] [verb] the [adjective] [noun] beside a [adjective] [noun].</option>
+    	<option value="18">The [adjective] [noun] [verb] the [adjective] [noun] behind a [adjective] [noun].</option>
+    	<option value="19">The [noun] [verb] the [adjective] [noun] near a [adjective] [noun].</option>
+    	<option value="20">The [adjective] [noun] [verb] the [adjective] [noun] inside the [adjective] [noun].</option>
+    	<option value="21">The [noun] [verb] the [adjective] [noun] over the [adjective] [noun].</option>
+    	<option value="22">The [adjective] [noun] [verb] the [adjective] [noun] in a [adjective] [noun].</option>
+    	<option value="23">The [noun] [verb] the [adjective] [noun] on the [adjective] [noun].</option>
+    	<option value="24">The [adjective] [noun] [verb] the [adjective] [noun] during a [adjective] [noun].</option>
+    	<option value="25">The [noun] [verb] the [adjective] [noun] at the [adjective] [noun].</option>
+    	<option value="26">The [adjective] [noun] [verb] the [adjective] [noun] while [verb] a [adjective] [noun].</option>
+    	<option value="27">The [noun] [verb] the [adjective] [noun] with a [adjective] [noun] inside a [adjective] [noun].</option>
+    	<option value="28">The [adjective] [noun] [verb] the [adjective] [noun] under a [adjective] [noun].</option>
+    	<option value="29">The [noun] [verb] the [adjective] [noun] in a [adjective] [noun] and [noun].</option>
+    	<option value="30">The [adjective] [noun] [verb] the [adjective] [noun] at a [adjective] [noun].</option>
+    	<option value="31">The [noun] [verb] the [adjective] [noun] after a [adjective] [noun].</option>
+    	<option value="32">The [adjective] [noun] [verb] the [adjective] [noun] across a [adjective] [noun].</option>
+    	<option value="33">The [noun] [verb] the [adjective] [noun] near a [adjective] [noun].</option>
+    	<option value="34">The [adjective] [noun] [verb] the [adjective] [noun] in a [adjective] [noun] and [noun].</option>
+    	<option value="35">The [noun] [verb] the [adjective] [noun] towards a [adjective] [noun].</option>
+    	<option value="36">The [adjective] [noun] [verb] the [adjective] [noun] beside a [adjective] [noun].</option>
+    	<option value="37">The [noun] [verb] the [adjective] [noun] down the [adjective] [noun].</option>
+    	<option value="38">The [adjective] [noun] [verb] the [adjective] [noun] in front of a [adjective] [noun].</option>
+    	<option value="39">The [noun] [verb] the [adjective] [noun] through a [adjective] [noun].</option>
+    	<option value="40">The [adjective] [noun] [verb] the [adjective] [noun] inside a [adjective] [noun].</option>
+    	<option value="41">The [noun] [verb] the [adjective] [noun] from a [adjective] [noun].</option>
+    	<option value="42">The [adjective] [noun] [verb] the [adjective] [noun] beside a [adjective] [noun].</option>
+    	<option value="43">The [noun] [verb] the [adjective] [noun] over the [adjective] [noun].</option>
+    	<option value="44">The [adjective] [noun] [verb] the [adjective] [noun] in front of a [adjective] [noun].</option>
+    	<option value="45">The [noun] [verb] the [adjective] [noun] near a [adjective] [noun].</option>
+    	<option value="46">The [adjective] [noun] [verb] the [adjective] [noun] down a [adjective] [noun].</option>
+    	<option value="47">The [noun] [verb] the [adjective] [noun] on top of a [adjective] [noun].</option>
+    	<option value="48">The [adjective] [noun] [verb] the [adjective] [noun] across the [adjective] [noun]..</option>
+    	<option value="49">The [noun] [verb] the [adjective] [noun] next to a [adjective] [noun].</option>
+    	<option value="50">The [adjective] [noun] [verb] the [adjective] [noun] behind a [adjective] [noun].</option>
+		</select>
+        <br>
+        <label>Validate sentence toxicity?</label>
+        <input type="checkbox" name="validate" value="YES">
+        <br>
+        <button type="submit">Generate</button>
+    </form>
+</body>
+</html>
