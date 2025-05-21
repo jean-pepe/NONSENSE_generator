@@ -21,5 +21,10 @@ Le frasi generate e le rispettive morfologie vengono salvate in un file di testo
    
 ## Ambienti di esecuzione
 ## API esterne
+* Google Natural Language Analyzing Syntax
+   > https://cloud.google.com/natural-language/docs/analyzing-syntax
+* Google Natural Language Moderate Text
+   > https://cloud.google.com/natural-language/docs/moderating-text
+* Spring Boot
 ## Informazioni aggiuntive
 *
