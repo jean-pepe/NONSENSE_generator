@@ -26,5 +26,23 @@ Le frasi generate e le rispettive morfologie vengono salvate in un file di testo
 * Google Natural Language Moderate Text
    > https://cloud.google.com/natural-language/docs/moderating-text
 * Spring Boot
+## Metodi usati da librerie utilizzate 
+* java.io.*;
+
+* java.net.HttpURLConnection;
+* java.net.URL;
+* java.nio.charset.StandardCharsets;
+* java.nio.file.Files;
+* java.nio.file.Path;
+* java.nio.file.StandardOpenOption;
+
+* jakarta.annotation.PostConstruct;
+
+* org.json.JSONArray;
+* org.json.JSONObject;
+
+* org.springframework.stereotype.Component;
+* org.springframework.stereotype.Service;
+
 ## Informazioni aggiuntive
 *
