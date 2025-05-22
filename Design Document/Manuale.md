@@ -30,20 +30,18 @@ Per compilare ed eseguire il codice è necessario aver installato JDK.
 ### Maven
 Per avviare il progetto è necessario aver installato e configurato Maven.
 ### API KEY
-Per usufruire di Google Cloud Language API, è necessario inserire la propria API key in una casella della pagina frontend.
+Per usufruire di Google Cloud Language API, è necessario inserire la propria API key in un campo di input nella pagina frontend.
 ### Internet
 Il computer deve avere accesso ad internet.
 ### Sistema operativo
 Il progetto è stato sviluppato in Java perciò può essere eseguito su qualsiasi sistema operativo che supporta una Java Virtual Machine compatibile, come Windows, macOS e Linux.
+
 ## Vincoli su versioni 
-(versione minima richiesta Java 17)
- (3.9.9)
-## API esterne
-* Google Natural Language Analyzing Syntax
-   > https://cloud.google.com/natural-language/docs/analyzing-syntax
-* Google Natural Language Moderate Text
-   > https://cloud.google.com/natural-language/docs/moderating-text
-* Spring Boot
+### Java
+Versione minima richiesta: Java 17
+### Maven
+Testato su Maven 3.9.9 ma si consiglia una versione superiore a 3.6.0
+
 ## Metodi usati da librerie utilizzate 
 * java.io.*;
 
@@ -62,5 +60,14 @@ Il progetto è stato sviluppato in Java perciò può essere eseguito su qualsias
 * org.springframework.stereotype.Component;
 * org.springframework.stereotype.Service;
 
+## API esterne
+### Google Natural Language  
+* #### AnalyzeSyntax ####
+    Analizza la struttura sintattica di un testo, restituisce le parti del discorso, l'albero sintattico e la lingua rilevata.
+   > https://cloud.google.com/natural-language/docs/analyzing-syntax
+* #### ModerateText ####
+    Analizza un testo e valuta i possibili contenuti inappropriati, restituisce il livello di confidenza. Se questo è maggiore di 0.75 allora il contenuto è probabilmente offensivo, se è maggiore di 0.9 allora è certamente inappropriato.
+   > https://cloud.google.com/natural-language/docs/moderating-text
+
 ## Informazioni aggiuntive
-*
+* Nei singoli dizionari 
