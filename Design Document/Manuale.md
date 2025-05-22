@@ -1,13 +1,18 @@
 # Manuale Nonsense Generator
-Il programma consiste in un generatore di frasi randomiche che può restituire l'albero sintattico della frase inserita dall'utente e la tossicità della frase generata.  
-L'utente può scegliere il tempo verbale dei verbi della frase generata.  
-Se selezionato, l'utente riceve l'albero sintattico della frase che ha inserito.  
-Inoltre, se desiderato, riceve la validazione della frase generata dal programma, con annesso grado di confidenza.  
-Le frasi generate e le rispettive morfologie vengono salvate in un file di testo.  
+Il progetto consiste in un generatore di frasi randomiche grammaticalmente corrette realizzato in Java con ulteriori funzionalità.  
+  
+Le funzionalità principali sono:  
+* L'utente può selezionare il tempo verbale dei verbi presenti nella frase generata.
+* Le parole della frase inserita dall'utente vengono classificate in categorie grammaticali tipo nomi, verbi, aggettivi, congiunzioni, avverbi, pronomi, punteggiatura, numeri e preposizioni.
+* I nomi, verbi e aggettivi riconosciuti nella frase dell'utente vengono aggiunti ai dizionari così da essere utilizzati nelle generazioni successive.
+* L'utente può scegliere la morfologia della frase generata oppure lasciare che venga scelta randomicamente.
+* Se richiesta, viene prodotta una rappresentazione testuale dell'albero sintattico della frase inserita dall'utente.
+* Se richiesto, il sistema verifica la tossicità e il contenuto offensivo della frase generata.
+* Tutte le frasi generate, assieme alla loro struttura, vengono salvate in un file di testo.
 
 ## Istruzioni per l'installazione
-1. Installare Java (versione minima richiesta Java 17)
-2. Installare Maven (3.9.9)
+1. Installare Java
+2. Installare Maven
 3. Scaricare la repository
       * > git clone https://github.com/jean-pepe/NONSENSE_generator.git
       * Altrimenti scarica la repository come zip e estrai i file
@@ -20,6 +25,19 @@ Le frasi generate e le rispettive morfologie vengono salvate in un file di testo
     > http://localhost:8080/
    
 ## Ambienti di esecuzione
+### JDK  
+Per compilare ed eseguire il codice è necessario aver installato JDK.
+### Maven
+Per avviare il progetto è necessario aver installato e configurato Maven.
+### API KEY
+Per usufruire di Google Cloud Language API, è necessario inserire la propria API key in una casella della pagina frontend.
+### Internet
+Il computer deve avere accesso ad internet.
+### Sistema operativo
+Il progetto è stato sviluppato in Java perciò può essere eseguito su qualsiasi sistema operativo che supporta una Java Virtual Machine compatibile, come Windows, macOS e Linux.
+## Vincoli su versioni 
+(versione minima richiesta Java 17)
+ (3.9.9)
 ## API esterne
 * Google Natural Language Analyzing Syntax
    > https://cloud.google.com/natural-language/docs/analyzing-syntax
