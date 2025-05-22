@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="MaGiNiSo.service.SentenceStructuresTest" time="0.0" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="MaGiNiSo.service.NonSenseServiceTest" time="0.094" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="20"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -62,7 +62,8 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="64.0"/>
   </properties>
-  <testcase name="testGetInvalidStructure" classname="MaGiNiSo.service.SentenceStructuresTest" time="0.0"/>
-  <testcase name="testGetValidStructure" classname="MaGiNiSo.service.SentenceStructuresTest" time="0.0"/>
-  <testcase name="testGetRandom" classname="MaGiNiSo.service.SentenceStructuresTest" time="0.0"/>
+  <testcase name="testAnalyzeSyntax" classname="MaGiNiSo.service.NonSenseServiceTest" time="0.079"/>
+  <testcase name="testPrintSyntacticTree" classname="MaGiNiSo.service.NonSenseServiceTest" time="0.0"/>
+  <testcase name="testValidateSentence" classname="MaGiNiSo.service.NonSenseServiceTest" time="0.015"/>
+  <testcase name="testGenerateSentence" classname="MaGiNiSo.service.NonSenseServiceTest" time="0.0"/>
 </testsuite>
