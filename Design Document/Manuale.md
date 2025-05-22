@@ -25,41 +25,55 @@ Le funzionalità principali sono:
     > http://localhost:8080/
    
 ## Ambienti di esecuzione
+
 ### JDK  
 Per compilare ed eseguire il codice è necessario aver installato JDK.
+
 ### Maven
 Per avviare il progetto è necessario aver installato e configurato Maven.
-### API KEY
-Per usufruire di Google Cloud Language API, è necessario inserire la propria API key in un campo di input nella pagina frontend.
+
+### IDE
+Opzionale
+
 ### Internet
 Il computer deve avere accesso ad internet.
+
+### API KEY
+Per usufruire di Google Cloud Language API, è necessario inserire la propria API key in un campo di input nella pagina frontend.
+
 ### Sistema operativo
 Il progetto è stato sviluppato in Java perciò può essere eseguito su qualsiasi sistema operativo che supporta una Java Virtual Machine compatibile, come Windows, macOS e Linux.
 
 ## Vincoli su versioni 
-### Java
+#### Java
 Versione minima richiesta: Java 17
-### Maven
+#### Maven
 Testato su Maven 3.9.9 ma si consiglia una versione superiore a 3.6.0
 
-## Metodi usati da librerie utilizzate 
-* java.io.*;
+## Funzioni principali riusate da librerie esistenti
 
-* java.net.HttpURLConnection;
-* java.net.URL;
-* java.nio.charset.StandardCharsets;
-* java.nio.file.Files;
-* java.nio.file.Path;
-* java.nio.file.StandardOpenOption;
+* **setRequestMethod(String method)** da java.net.HttpURLConnection :<br>Set the method for the URL request, one of:GET/POST/HEAD/OPTIONS/PUT/DELETE/TRACE are legal, subject to protocol restrictions.
 
-* jakarta.annotation.PostConstruct;
+* **setRequestProperty(String key, String value)** da java.net.HttpURLConnection :<br>Sets the general request property. If a property with the key already exists, overwrite its value with the new value.
 
-* org.json.JSONArray;
-* org.json.JSONObject;
+*  **setDoOutput(boolean dooutput)** da java.net.HttpURLConnection :<br>Sets the value of the doOutput field for this URLConnection to the specified value.
 
-* org.springframework.stereotype.Component;
+* **getOutputStream()** da java.net.URLConnection :<br>Returns an output stream that writes to this connection.
+
+* **readAllLines(Path path)** da java.nio.file.Files :<br>Bytes from the file are decoded into characters using the UTF-8 charset.
+
+* **write(Path path, Iterable<? extends CharSequence> lines, OpenOption... options)** da java.nio.file.Files :<br>Write lines of text to a file. Characters are encoded into bytes using the UTF-8 charset.
+
+* **get(String first, String... more)** da java.nio.file.Paths :<br>Converts a path string, or a sequence of strings that when joined form a path string, to a Path.
+
+* **optJSONArray(String key)** da org.json.JSONObject :<br>Get an optional JSONArray associated with a key.
+
+* **getJSONObject(int index)** da org.json.JSONArray :<br>Get the JSONObject associated with an index.
+
+<!--* org.springframework.stereotype.Component;
 * org.springframework.stereotype.Service;
-
+* * java.nio.charset.StandardCharsets;
+* jakarta.annotation.PostConstruct; -->
 ## API esterne
 ### Google Natural Language  
 * #### AnalyzeSyntax ####
@@ -70,4 +84,4 @@ Testato su Maven 3.9.9 ma si consiglia una versione superiore a 3.6.0
    > https://cloud.google.com/natural-language/docs/moderating-text
 
 ## Informazioni aggiuntive
-* Nei singoli dizionari 
+* La presenza di sole 20 parole per dizionario permette di favorire la selezione delle parole recentemente aggiunte nei dizionari per le frasi successive.
