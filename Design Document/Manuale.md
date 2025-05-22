@@ -45,9 +45,9 @@ Per usufruire di Google Cloud Language API, è necessario inserire la propria AP
 Il progetto è stato sviluppato in Java perciò può essere eseguito su qualsiasi sistema operativo che supporta una Java Virtual Machine compatibile, come Windows, macOS e Linux.
 
 ## Vincoli su versioni 
-#### Java
+* **Java** <br>
 Versione minima richiesta: Java 17
-#### Maven
+* **Maven** <br>
 Testato su Maven 3.9.9 ma si consiglia una versione superiore a 3.6.0
 
 ## Funzioni principali riusate da librerie esistenti
