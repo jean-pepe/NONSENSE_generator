@@ -52,7 +52,7 @@ Testato su Maven 3.9.9 ma si consiglia una versione superiore a 3.6.0
 
 ## Funzioni principali riusate da librerie esistenti
 
-* **setRequestMethod(String method)** da java.net.HttpURLConnection :<br>Set the method for the URL request, one of:GET/POST/HEAD/OPTIONS/PUT/DELETE/TRACE are legal, subject to protocol restrictions.
+* **setRequestMethod(String method)** da java.net.HttpURLConnection :<br>Imposta il metodo per la richiesta URL, uno tra: GET/POST/HEAD/OPTIONS/PUT/DELETE/TRACE sono legali, soggetti alle restrizioni del protocollo.
 
 * **setRequestProperty(String key, String value)** da java.net.HttpURLConnection :<br>Sets the general request property. If a property with the key already exists, overwrite its value with the new value.
 
