@@ -26,22 +26,22 @@ Le funzionalità principali sono:
    
 ## Ambienti di esecuzione
 
-### JDK  
+* **JDK**  
 Per compilare ed eseguire il codice è necessario aver installato JDK.
 
-### Maven
+* **Maven**  
 Per avviare il progetto è necessario aver installato e configurato Maven.
 
-### IDE
+* **IDE**  
 Opzionale
 
-### Internet
+* **Internet**  
 Il computer deve avere accesso ad internet.
 
-### API KEY
+* **API KEY**  
 Per usufruire di Google Cloud Language API, è necessario inserire la propria API key in un campo di input nella pagina frontend.
 
-### Sistema operativo
+* **Sistema operativo**  
 Il progetto è stato sviluppato in Java perciò può essere eseguito su qualsiasi sistema operativo che supporta una Java Virtual Machine compatibile, come Windows, macOS e Linux.
 
 ## Vincoli su versioni 
@@ -76,10 +76,10 @@ Testato su Maven 3.9.9 ma si consiglia una versione superiore a 3.6.0
 * jakarta.annotation.PostConstruct; -->
 ## API esterne
 ### Google Natural Language  
-* #### AnalyzeSyntax ####
+* **AnalyzeSyntax**  
     Analizza la struttura sintattica di un testo, restituisce le parti del discorso, l'albero sintattico e la lingua rilevata.
    > https://cloud.google.com/natural-language/docs/analyzing-syntax
-* #### ModerateText ####
+* **ModerateText**  
     Analizza un testo e valuta i possibili contenuti inappropriati, restituisce il livello di confidenza. Se questo è maggiore di 0.75 allora il contenuto è probabilmente offensivo, se è maggiore di 0.9 allora è certamente inappropriato.
    > https://cloud.google.com/natural-language/docs/moderating-text
 
