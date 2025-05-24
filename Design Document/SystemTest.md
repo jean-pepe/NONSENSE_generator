@@ -50,7 +50,7 @@
 |   03  |   OK    |
 |   04  |   OK    |
 |   05  |   OK    | It works with the natural languages specified in the documentation of analyzeSyntax |
-|   06  |   OK    | It's added in its dictionary even if already present |
+|   06  |   OK    | It's added to its dictionary even if already present |
 |   07  |   OK    |
 |   08  |   OK    | A dropdown menu is shown |
 |   09  |   OK    |
