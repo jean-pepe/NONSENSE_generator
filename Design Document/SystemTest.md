@@ -55,14 +55,14 @@
 |   03  |   OK    | Structure respected |
 |   04  |   OK    | Score displayed |
 |   05  |   OK    | Validated with the natural languages specified in the documentation of analyzeSyntax |
-|   06  |   OK    | It is added to its dictionary even if already present |
-|   07  |   OK    | New words are used |
+|   06  |   OK    | Word added to its dictionary even if already present |
+|   07  |   OK    | New words used |
 |   08  |   OK    | A dropdown menu displayed |
 |   09  |   OK    | Visual indicator appears |
-|   10  |   OK    | Tense is correct |
+|   10  |   OK    | Tense correct |
 |   11  |   OK    | File format is .txt |
 |   12  |   OK    | They are saved in the directory src\main\java\MaGiNiSo |
 |   13  |   OK    | First the structure is saved, then the sentence |
-|   14  |   OK    | "Please fill out this field" is shown |
-|   15  |   OK    | "Please fill out this field" is shown |
+|   14  |   OK    | "Please fill out this field" shown |
+|   15  |   OK    | "Please fill out this field" shown |
 |   16  |   OK    | The syntactic tree is hidden |
