@@ -40,3 +40,18 @@
     When the system saves the new generated sentence and its morphology,  
     Then it doesn't overwrite the previously saved ones.
 # System test report 
+| n° AC |  Result  | Comments | 
+|-------|---------|----------|
+|   01  |   OK    |
+|   02  |   OK    | A dropdown menu is shown |
+|   03  |   OK    |
+|   04  |   OK    |
+|   05  |   OK    | It works with the natural languages specified in the documentation of analyzeSyntax |
+|   06  |   OK    | It's added in its dictionary even if already present |
+|   07  |   OK    |
+|   08  |   OK    | A dropdown menu is shown |
+|   09  |   OK    |
+|   10  |   OK    |
+|   11  |   OK    |
+|   12  |   OK    | They are saved in the directory src\main\java\MaGiNiSo |
+|   13  |   OK    | First the structure is saved, then the sentence |
