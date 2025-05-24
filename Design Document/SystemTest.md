@@ -1,15 +1,21 @@
-# System test report :
+# Acceptance criteria
+1. Given I'm a system user,  
+ When I choose a sentence template,  
+ Then it should be visibly marked as active.
+2. Given I'm a system user,  
+   When I want to choose a sentence structure,  
+   Then a list of pre-defined sentence templates is shown.
+3. Given I'm a system user,  
+   When I chose a sentence structure,  
+   Then the structure of the generated sentence should be the same.
+4. Given I'm an administrator,  
+   When the user marks the option,  
+   Then the system should display the toxicity score.
+5. Given I'm an administrator,
+   When the system generates an offensive sentence
+   and the nouns aren't in English and 
 
-- [x] When accessed the template section, a list of pre-defined sentence templates is shown  
-      say for example :
-> The [noun] [verb] the [adjective] [noun] in a [adjective] [noun] and [noun].
-
-- [x] When the user chooses the template, it should be visibly marked as active.
-
-- [x] When the user has selected a template, the generated sentence should follow the structure of the selected template.
-
-- [x] If the user selects the option, the system should display the toxicity score to the user.
-
+# System test report
 - [x] the system should recognize the toxicity score in English language 
 
 - [x]  the system should recognize the toxicity score in Italian language 
