@@ -15,9 +15,10 @@ Le funzionalità principali sono:
 2. Installare Maven
 3. Scaricare la repository
       * > git clone https://github.com/jean-pepe/NONSENSE_generator.git
-      * Altrimenti scarica la repository come zip e estrai i file
+      * Altrimenti scaricare la repository come zip e estrarre i file
 4. Aprire il terminale
-5. Digitare
+5. Andare nella directory contenente il progetto
+6. Digitare
    > mvn clean package
 7. Digitare
    > mvn spring-boot:run
@@ -52,28 +53,25 @@ Testato su Maven 3.9.9 ma si consiglia una versione superiore a 3.6.0
 
 ## Funzioni principali riusate da librerie esistenti
 
-* **setRequestMethod(String method)** da java.net.HttpURLConnection :<br>Imposta il metodo per la richiesta URL, uno tra: GET/POST/HEAD/OPTIONS/PUT/DELETE/TRACE sono legali, soggetti alle restrizioni del protocollo.
+* **setRequestMethod(String method)** da java.net.HttpURLConnection :<br><br>
+Imposta il tipo di richiesta HTTP che verrà inviata al server.
 
-* **setRequestProperty(String key, String value)** da java.net.HttpURLConnection :<br>Sets the general request property. If a property with the key already exists, overwrite its value with the new value.
+* **setRequestProperty(String key, String value)** da java.net.HttpURLConnection :<br><br>Aggiunge o sovrascrive una proprietà della richiesta HTTP prima dell'invio.
 
-*  **setDoOutput(boolean dooutput)** da java.net.HttpURLConnection :<br>Sets the value of the doOutput field for this URLConnection to the specified value.
+*  **setDoOutput(boolean dooutput)** da java.net.HttpURLConnection :<br><br>Se impostato a true, abilita lo stream di output.
 
-* **getOutputStream()** da java.net.URLConnection :<br>Returns an output stream that writes to this connection.
+* **getOutputStream()** da java.net.URLConnection :<br><br>Permette di inviare dati al server come parte del corpo della richiesta HTTP.
 
-* **readAllLines(Path path)** da java.nio.file.Files :<br>Bytes from the file are decoded into characters using the UTF-8 charset.
+* **readAllLines(Path path)** da java.nio.file.Files :<br><br>Legge il contenuto del file specificato dal Path, restituisce una lista dove ogni elemento è una riga del file.
 
-* **write(Path path, Iterable<? extends CharSequence> lines, OpenOption... options)** da java.nio.file.Files :<br>Write lines of text to a file. Characters are encoded into bytes using the UTF-8 charset.
+* **write(Path path, Iterable<? extends CharSequence> lines, OpenOption... options)** da java.nio.file.Files :<br><br>Scrive le righe fornite nel file indicato da path.
 
-* **get(String first, String... more)** da java.nio.file.Paths :<br>Converts a path string, or a sequence of strings that when joined form a path string, to a Path.
+* **get(String first, String... more)** da java.nio.file.Paths :<br><br>Costruisce un oggetto Path combinando i segmenti forniti.
 
-* **optJSONArray(String key)** da org.json.JSONObject :<br>Get an optional JSONArray associated with a key.
+* **optJSONArray(String key)** da org.json.JSONObject :<br><br>Cerca il valore associato alla chiave specificata, se esiste lo restituisce.
 
-* **getJSONObject(int index)** da org.json.JSONArray :<br>Get the JSONObject associated with an index.
+* **getJSONObject(int index)** da org.json.JSONArray :<br><br>Accede all'elemento alla posizione index in un JSONArray, se è un JSONObject, lo restituisce.
 
-<!--* org.springframework.stereotype.Component;
-* org.springframework.stereotype.Service;
-* * java.nio.charset.StandardCharsets;
-* jakarta.annotation.PostConstruct; -->
 ## API esterne
 ### Google Natural Language  
 * **AnalyzeSyntax**  
