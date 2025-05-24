@@ -9,7 +9,7 @@
    When I chose a sentence structure,  
    Then the structure of the generated sentence should be the same.
 4. Given I'm an administrator,  
-   When the user marks the option,  
+   When the user marks the option and the system generates a random sentence,  
    Then the system should display the toxicity score.
 5. Given I'm an administrator,  
    When the user types a sentence in a language different from English  
@@ -39,8 +39,9 @@
 13. Given I'm a developer,  
     When the system saves the new generated sentence and its morphology,  
     Then it doesn't overwrite the previously saved ones.
-14. Given I'm a developer,
-    When
+14. Given I'm a developer,  
+    When the user doesn't insert his/her API key,  
+    Then the system shows an error message.
 # System test report 
 | n° AC |  Result | Comments | 
 |-------|---------|----------|
@@ -57,3 +58,4 @@
 |   11  |   OK    |
 |   12  |   OK    | They are saved in the directory src\main\java\MaGiNiSo |
 |   13  |   OK    | First the structure is saved, then the sentence |
+|   14  |   OK    | "Please fill out this field" is shown |
