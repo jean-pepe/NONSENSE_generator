@@ -48,8 +48,8 @@
     When a sentence is generated,   
     Then the system should not display the syntactic tree.
 # System test report 
-| AcCr ID |  Result | Comments | 
-|-------|---------|----------|
+| AcCr ID |  Result | Comments | Date |
+|-------|---------|------------|-------|
 |   01  |   OK    | Visual indicator appears |
 |   02  |   OK    | A dropdown menu displayed |
 |   03  |   OK    | Structure respected |
