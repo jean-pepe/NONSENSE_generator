@@ -40,7 +40,7 @@
     When the system saves the new generated sentence and its morphology,  
     Then it doesn't overwrite the previously saved ones.
 # System test report 
-| n° AC |  Result  | Comments | 
+| n° AC |  Result | Comments | 
 |-------|---------|----------|
 |   01  |   OK    |
 |   02  |   OK    | A dropdown menu is shown |
