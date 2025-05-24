@@ -39,6 +39,8 @@
 13. Given I'm a developer,  
     When the system saves the new generated sentence and its morphology,  
     Then it doesn't overwrite the previously saved ones.
+14. Given I'm a developer,
+    When
 # System test report 
 | n° AC |  Result | Comments | 
 |-------|---------|----------|
