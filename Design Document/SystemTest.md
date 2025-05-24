@@ -19,7 +19,7 @@
    Then it should analyze each word and store it in its dictionary.
 7. Given new words are added to the dictionaries,   
    When a sentence is generated,   
-   Then the new words should be available for the future generations.
+   Then the new words should be available for the next generations.
 8. Given the frontend web page,  
    When the user wants to select the verb tense,  
    Then the system should show the three available tenses: Past, Present and Future.
@@ -48,21 +48,21 @@
     When a sentence is generated,   
     Then the system should not display the syntactic tree.
 # System test report 
-| n° AC |  Result | Comments | 
+| AcCr ID |  Result | Comments | 
 |-------|---------|----------|
-|   01  |   OK    |
-|   02  |   OK    | A dropdown menu is shown |
-|   03  |   OK    |
-|   04  |   OK    |
-|   05  |   OK    | It works with the natural languages specified in the documentation of analyzeSyntax |
-|   06  |   OK    | It's added to its dictionary even if already present |
-|   07  |   OK    |
-|   08  |   OK    | A dropdown menu is shown |
-|   09  |   OK    |
-|   10  |   OK    |
-|   11  |   OK    |
+|   01  |   OK    | Visual indicator appears |
+|   02  |   OK    | A dropdown menu displayed |
+|   03  |   OK    | Structure respected |
+|   04  |   OK    | Score displayed |
+|   05  |   OK    | Validated with the natural languages specified in the documentation of analyzeSyntax |
+|   06  |   OK    | It is added to its dictionary even if already present |
+|   07  |   OK    | New words are used |
+|   08  |   OK    | A dropdown menu displayed |
+|   09  |   OK    | Visual indicator appears |
+|   10  |   OK    | Tense is correct |
+|   11  |   OK    | File format is .txt |
 |   12  |   OK    | They are saved in the directory src\main\java\MaGiNiSo |
 |   13  |   OK    | First the structure is saved, then the sentence |
 |   14  |   OK    | "Please fill out this field" is shown |
 |   15  |   OK    | "Please fill out this field" is shown |
-|   16  |   OK    | The syntactic tree isn't shown |
+|   16  |   OK    | The syntactic tree is hidden |
