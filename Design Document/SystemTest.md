@@ -1,41 +1,42 @@
 # Acceptance criteria
-1. Given I'm a system user,  
- When I choose a sentence template,  
- Then it should be visibly marked as active.
-2. Given I'm a system user,  
+1. Given I'm a user,  
+   When I choose a sentence template,  
+   Then it should be visibly marked as active.
+2. Given I'm a user,  
    When I want to choose a sentence structure,  
    Then a list of pre-defined sentence templates is shown.
-3. Given I'm a system user,  
+3. Given I'm a user,  
    When I chose a sentence structure,  
    Then the structure of the generated sentence should be the same.
 4. Given I'm an administrator,  
    When the user marks the option,  
    Then the system should display the toxicity score.
-5. Given I'm an administrator,
-   When the system generates an offensive sentence
-   and the nouns aren't in English and 
-
-# System test report
-- [x] the system should recognize the toxicity score in English language 
-
-- [x]  the system should recognize the toxicity score in Italian language 
-
-- [x]  the system should recognize the toxicity score in Spanish language 
-
-- [x] Given a user inputs sentence the system add any words in the existing dictionary.
-
-- [x] Given the dictionary is updated with new words the system should be able to use the newly added words in sentence generation.
-
-- [x] The system shows the three available time choices: Past, Present, and Future.
-
-- [x] When the user sees the time options, the selected option should be clearly highlighted.
-
-- [x] The sentence should use the verbs tenses appropriate to the selected time
-
-- [x] When the sentence and morphology are saved, the system should save them in a .txt file format.
-
-- [x] The saved file should include : the generated sentence and the morphological analysis (e.g., parts of speech, verb forms)
- 
-- [x] When the file is generated the system saves the file in the local device.
-
-- [x]  The system should allow saving of multiple generated sentences without overwriting previously saved files.
+5. Given I'm an administrator,  
+   When the user types a sentence in a language different from English  
+   and the words are used again in the next generated sentences,  
+   Then the system should still validate the sentence toxicity.
+6. Given I'm a developer,  
+   When the system receives an input sentence,  
+   Then the system analyzes each word and adds it to its dictionary.
+7. Given I'm a developer,  
+   When the dictionaries are updated with new words,  
+   Then the system should be able to use them in the next sentence generation.
+8. Given I'm a developer,  
+   When the user wants to select the verb tense,  
+   Then the system shows the three available tenses: Past, Present and Future.
+9. Given I'm a user,  
+   When I chose the verb tense,  
+   Then the selected option should be clearly highlighted.
+10. Given I'm a user,  
+    When the system generates a sentence,  
+    Then the verb tense should be appropriate to the selected time.
+11. Given I'm a developer,  
+    When the sentence and its morphology are saved,  
+    Then the system should save them in a .txt file format.
+12. Given I'm a user,  
+    When the file is generated,  
+    Then the system saves the file in the local device.
+13. Given I'm a developer,  
+    When the system saves the new generated sentence and its morphology,  
+    Then it doesn't overwrite the previously saved ones.
+# System test report 
