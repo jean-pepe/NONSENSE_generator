@@ -50,19 +50,19 @@
 # System test report 
 | AcCr ID |  Result | Comments | Date |
 |-------|---------|------------|-------|
-|   01  |   OK    | Visual indicator appears |
-|   02  |   OK    | A dropdown menu displayed |
-|   03  |   OK    | Structure respected |
-|   04  |   OK    | Score displayed |
-|   05  |   OK    | Validated with the natural languages specified in the documentation of analyzeSyntax |
-|   06  |   OK    | Word added to its dictionary even if already present |
-|   07  |   OK    | New words used |
-|   08  |   OK    | A dropdown menu displayed |
-|   09  |   OK    | Visual indicator appears |
-|   10  |   OK    | Tense correct |
-|   11  |   OK    | File format is .txt |
-|   12  |   OK    | They are saved in the directory src\main\java\MaGiNiSo |
-|   13  |   OK    | First the structure is saved, then the sentence |
-|   14  |   OK    | "Please fill out this field" shown |
-|   15  |   OK    | "Please fill out this field" shown |
-|   16  |   OK    | The syntactic tree is hidden |
+|   01  |   OK    | Visual indicator appears | 20/05/2025 |
+|   02  |   OK    | A dropdown menu displayed | 20/05/2025 |
+|   03  |   OK    | Structure respected | 19/05/2025 |
+|   04  |   OK    | Score displayed | 19/05/2025 |
+|   05  |   OK    | Validated with the natural languages specified in the documentation of analyzeSyntax | 24/05/2025 |
+|   06  |   OK    | Word added to its dictionary even if already present | 21/05/2025 |
+|   07  |   OK    | New words used | 19/05/2025 |
+|   08  |   OK    | A dropdown menu displayed | 20/05/2025 |
+|   09  |   OK    | Visual indicator appears | 20/05/2025 |
+|   10  |   OK    | Tense correct | 19/05/2025 |
+|   11  |   OK    | File format is .txt | 21/05/2025 |
+|   12  |   OK    | They are saved in the directory src\main\java\MaGiNiSo | 21/05/2025 |
+|   13  |   OK    | First the structure is saved, then the sentence | 20/05/2025 |
+|   14  |   OK    | "Please fill out this field" shown | 23/05/2025 |
+|   15  |   OK    | "Please fill out this field" shown | 23/05/2025 |
+|   16  |   OK    | The syntactic tree is hidden | 19/05/2025 |
