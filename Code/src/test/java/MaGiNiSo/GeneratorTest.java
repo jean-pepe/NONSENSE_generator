@@ -35,7 +35,7 @@ class GeneratorTest {
     }
 
     @Test
-	@DisplayName("Sentence generata non nulla e le sue parole appartengono ai dizionari")
+	@DisplayName("La sentence generata non e' nulla e le sue parole appartengono ai dizionari")
     void testGenerateSentenceWithValidTense() {
         String sentence = generator.generateSentence("present", 0);
         assertNotNull(sentence, "La frase generata non dovrebbe essere nulla");
@@ -43,7 +43,7 @@ class GeneratorTest {
     }
 
     @Test
-	@DisplayName("Eccezione in caso di tempo verbale non valido.")
+	@DisplayName("Generate manda un eccezione se il tempo verbale non valido.")
     void testGenerateSentenceWithInvalidTense() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             generator.generateSentence("invalid_tense", 0);

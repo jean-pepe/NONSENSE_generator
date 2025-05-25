@@ -2,6 +2,7 @@ package MaGiNiSo.service;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import java.util.List;
@@ -18,6 +19,7 @@ class AnalyzatorTest {
     }
 
     @Test
+	@DisplayName("analyzeSyntax() con un input valido non manda eccezioni")
     void testAnalyzeSyntaxWithValidInput() {
         // Simuliamo una frase e chiamiamo il metodo
         String sentence = "The cat sleeps on the mat.";
@@ -37,6 +39,7 @@ class AnalyzatorTest {
     }
 
     @Test
+	@DisplayName("analyzeSyntax() con un tempo invalido manda eccezioni")
     void testInvalidVerbalTense() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             analyzator.analyzeSyntax("Test sentence", "invalid_tense", "test_api_key");
@@ -46,6 +49,7 @@ class AnalyzatorTest {
     }
 
     @Test
+	@DisplayName("analyzeSyntax() genera un SyntacticTree non nullo")
     void testSyntacticTreeFormat() {
         String syntacticTree = analyzator.getSyntacticTree();
 

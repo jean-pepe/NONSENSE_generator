@@ -2,6 +2,7 @@ package MaGiNiSo.service;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
@@ -18,6 +19,7 @@ public class ValidatorTest {
     }
 
     @Test
+	@DisplayName("Validator da un risultato non nullo e' offensivo")
     public void testValidateSentenceOffensive() {
         String sentence = "This is an offensive sentence!";
         String apiKey = "fake_api_key";
@@ -33,6 +35,7 @@ public class ValidatorTest {
     }
 
     @Test
+		@DisplayName("Validator da un risultato non nullo e' non offensivo")
     public void testValidateSentenceValid() {
         String sentence = "Hello, how are you?";
         String apiKey = "fake_api_key";

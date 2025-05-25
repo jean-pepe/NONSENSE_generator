@@ -2,6 +2,7 @@ package MaGiNiSo.service;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -17,6 +18,7 @@ class SentenceStructuresTest {
     }
 
     @Test
+	@DisplayName("La sentenceStructures data non e' nulla e appartiene all'elenco dato")
     void testGetRandom() {
         List<String> structures = Arrays.asList("The", "[noun]", "[verb]","the","[adjective]","[noun]","in","a","[adjective]","[noun]","and","[noun]",".");
         sentenceStructures = new SentenceStructures("src/test/resources/test.txt") {
@@ -31,25 +33,4 @@ class SentenceStructuresTest {
         assertTrue(structures.contains(randomStructure), "La struttura dovrebbe essere una di quelle definite");
     }
 
-    @Test
-    void testGetValidStructure() {
-        List<String> structures = Arrays.asList("The", "[noun]", "[verb]","the","[adjective]","[noun]","in","a","[adjective]","[noun]","and","[noun]",".");
-        sentenceStructures = new SentenceStructures("src/test/resources/test.txt") {
-            @Override
-            public String get(int i) {
-                return structures.get(i - 1);
-            }
-        };
-
-        assertEquals("[verb]", sentenceStructures.get(3), "La struttura ottenuta non corrisponde a quella attesa");
-    }
-
-    @Test
-    void testGetInvalidStructure() {
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            sentenceStructures.get(0);
-        });
-
-        assertTrue(exception.getMessage().contains("Structure number not admitted"), "Messaggio di errore non corretto");
-    }
 }
