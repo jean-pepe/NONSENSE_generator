@@ -27,7 +27,6 @@ class AnalyzatorTest {
         // Eseguiamo l'analisi sintattica (senza chiamare l'API reale)
         assertDoesNotThrow(() -> analyzator.analyzeSyntax(sentence, time, apiKey));
 
-        // Verifichiamo che le liste siano popolate correttamente
         List<String> nouns = analyzator.getNouns();
         List<String> verbs = analyzator.getVerbs();
         List<String> adjectives = analyzator.getAdjectives();

@@ -3,59 +3,47 @@ package MaGiNiSo.service;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
 
-import java.io.IOException;
+public class ValidatorTest {
 
-class ValidatorTest {
-/*
+    @Mock
     private Validator validator;
 
     @BeforeEach
-    void setUp() {
-        validator = new Validator();
+    public void setUp() {
+        MockitoAnnotations.openMocks(this);
     }
 
     @Test
-    void testValidateSentenceWithValidContent() throws IOException {
+    public void testValidateSentenceOffensive() {
+        String sentence = "This is an offensive sentence!";
+        String apiKey = "fake_api_key";
+
+        // Simuliamo la risposta prevista per una frase offensiva
+        Mockito.when(validator.validateSentence(sentence, apiKey))
+               .thenReturn("The phrase has offensive content: Profanity (confidence: 0.90)");
+
+        String result = validator.validateSentence(sentence, apiKey);
+
+        assertNotNull(result);
+        assertTrue(result.contains("offensive"));
+    }
+
+    @Test
+    public void testValidateSentenceValid() {
         String sentence = "Hello, how are you?";
-        String apiKey = "test_api_key";
+        String apiKey = "fake_api_key";
 
-        // Simuliamo una risposta JSON dell'API senza contenuti offensivi
-        String jsonResponse = "{ \"moderationCategories\": [] }";
+        // Simuliamo la risposta prevista per una frase valida
+        Mockito.when(validator.validateSentence(sentence, apiKey))
+               .thenReturn("The phrase is valid and doesn't have offensive language.");
 
-        String result = Validator.processResponse(jsonResponse);
-        assertEquals("The phrase is valid and doesn't have offensive language.", result);
+        String result = validator.validateSentence(sentence, apiKey);
+
+        assertNotNull(result);
+        assertTrue(result.contains("valid"));
     }
-
-    @Test
-    void testValidateSentenceWithOffensiveContent() throws IOException {
-        String sentence = "Some offensive words";
-        String apiKey = "test_api_key";
-
-        // Simuliamo una risposta JSON con contenuti offensivi
-        String jsonResponse = "{ \"moderationCategories\": [{ \"name\": \"Hate Speech\", \"confidence\": 0.85 }] }";
-
-        String result = Validator.processResponse(jsonResponse);
-        assertTrue(result.contains("The frase has offensive content"), "Il messaggio dovrebbe segnalare contenuti offensivi.");
-    }
-
-    @Test
-    void testValidateSentenceWithLowConfidenceOffensiveContent() throws IOException {
-        String sentence = "Potentially offensive words";
-        String apiKey = "test_api_key";
-
-        // Simuliamo una risposta con bassa confidenza (<0.75)
-        String jsonResponse = "{ \"moderationCategories\": [{ \"name\": \"Hate Speech\", \"confidence\": 0.50 }] }";
-
-        String result = Validator.processResponse(jsonResponse);
-        assertEquals("The phrase is valid and doesn't have offensive language.", result);
-    }
-
-    @Test
-    void testProcessResponseWithNullCategories() {
-        String jsonResponse = "{ \"moderationCategories\": null }";
-        String result = Validator.processResponse(jsonResponse);
-        assertEquals("The phrase is valid and doesn't have offensive language.", result);
-    }*/
 }

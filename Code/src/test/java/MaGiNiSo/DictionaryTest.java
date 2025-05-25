@@ -14,26 +14,27 @@ class DictionaryTest {
 
     private Dictionary dictionary;
 
-    @BeforeEach
+    @BeforeEach //per creare una nuova istanza di Dictionary prima di ogni test
     void setUp() {
         dictionary = new Dictionary("src/test/resources/test.txt");
     }
-
+	
     @Test
-    @DisplayName("Aggiunta e recupero definizione")
+    @DisplayName("Aggiunta e recupero parola")
     void testAddWords() {
         List<String> words = Arrays.asList("apple", "banana", "cherry");
         dictionary.add(words);
 
         String word = dictionary.get();
-        assertTrue(words.contains(word), "La parola ottenuta dovrebbe essere tra quelle aggiunte");
+        assertTrue(words.contains(word), "La parola ottenuta appartiene tra quelle aggiunte");
     }
 	
 	@Test
+	@DisplayName("Conferma che il dizionario contenga parole una volta che vengono aggiunte")
     void testGetRandomWord() {
         dictionary.add(Arrays.asList("hello", "world", "test"));
         String word = dictionary.get();
         assertNotNull(word, "La parola ottenuta non dovrebbe essere null");
     }
-
+	
 }

@@ -43,7 +43,7 @@ class NonSenseServiceTest {
 
     @Test
     void testPrintSyntacticTree() {
-        String expectedTree = "(ROOT (S (NP (DT The) (NN cat)) (VP (VBZ sleeps))))";
+        String expectedTree = "The [noun] [verb] the [adjective] [noun] in a [adjective] [noun] and [noun].";
         Mockito.when(mockAnalyzator.getSyntacticTree()).thenReturn(expectedTree);
 
         String syntacticTree = nonSenseService.printSyntacticTree();

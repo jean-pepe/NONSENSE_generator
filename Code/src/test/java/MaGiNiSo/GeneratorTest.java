@@ -2,6 +2,7 @@ package MaGiNiSo.service;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
@@ -34,6 +35,7 @@ class GeneratorTest {
     }
 
     @Test
+	@DisplayName("Sentence generata non nulla e le sue parole appartengono ai dizionari")
     void testGenerateSentenceWithValidTense() {
         String sentence = generator.generateSentence("present", 0);
         assertNotNull(sentence, "La frase generata non dovrebbe essere nulla");
@@ -41,6 +43,7 @@ class GeneratorTest {
     }
 
     @Test
+	@DisplayName("Eccezione in caso di tempo verbale non valido.")
     void testGenerateSentenceWithInvalidTense() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             generator.generateSentence("invalid_tense", 0);
@@ -50,6 +53,7 @@ class GeneratorTest {
     }
 
     @Test
+	@DisplayName("Sentence generata con la giusta struttura")
     void testGenerateSentenceWithSpecificStructure() {
         String sentence = generator.generateSentence("past", 1);
         assertNotNull(sentence, "La frase generata non dovrebbe essere nulla");
