@@ -19,7 +19,7 @@ public class ValidatorTest {
     }
 
     @Test
-	@DisplayName("Validator da un risultato non nullo e' offensivo")
+    @DisplayName("Validator da un risultato non nullo e offensivo")
     public void testValidateSentenceOffensive() {
         String sentence = "This is an offensive sentence!";
         String apiKey = "fake_api_key";
@@ -35,7 +35,7 @@ public class ValidatorTest {
     }
 
     @Test
-		@DisplayName("Validator da un risultato non nullo e' non offensivo")
+    @DisplayName("Validator da un risultato non nullo e non offensivo")
     public void testValidateSentenceValid() {
         String sentence = "Hello, how are you?";
         String apiKey = "fake_api_key";
