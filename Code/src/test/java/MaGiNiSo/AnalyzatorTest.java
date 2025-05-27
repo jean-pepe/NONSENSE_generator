@@ -21,12 +21,12 @@ class AnalyzatorTest {
     @Test
 	@DisplayName("analyzeSyntax() con un input valido non manda eccezioni")
     void testAnalyzeSyntaxWithValidInput() {
-        // Simuliamo una frase e chiamiamo il metodo
-        String sentence = "The cat sleeps on the mat.";
+
+        String sentence = "The sky is blue.";
         String time = "present";
         String apiKey = "test_api_key";
 
-        // Eseguiamo l'analisi sintattica (senza chiamare l'API reale)
+        // Eseguiamo l'analisi sintattica 
         assertDoesNotThrow(() -> analyzator.analyzeSyntax(sentence, time, apiKey));
 
         List<String> nouns = analyzator.getNouns();
@@ -42,7 +42,7 @@ class AnalyzatorTest {
 	@DisplayName("analyzeSyntax() con un tempo invalido manda eccezioni")
     void testInvalidVerbalTense() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            analyzator.analyzeSyntax("Test sentence", "invalid_tense", "test_api_key");
+            analyzator.analyzeSyntax("The sky is blue.", "invalid_tense", "test_api_key");
         });
 
         assertEquals("Invalid verbal tense. Accepted: present/past/future", exception.getMessage());
