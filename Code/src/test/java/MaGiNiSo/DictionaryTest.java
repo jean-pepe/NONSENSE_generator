@@ -33,7 +33,7 @@ class DictionaryTest {
     void testGetRandomWord() {
         dictionary.add(Arrays.asList("sky", "moon", "earth"));
         String word = dictionary.get();
-        assertNotNull(word, "La parola ottenuta non dovrebbe essere null");
+        assertNotNull(word, "La parola e' nulla");
     }
 	
 }
