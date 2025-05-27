@@ -30,8 +30,8 @@ public class ValidatorTest {
 
         String result = validator.validateSentence(sentence, apiKey);
 
-        assertNotNull(result);
-        assertTrue(result.contains("offensive"));
+        assertNotNull(result); //Controllo che la stringa non sia nulla
+        assertTrue(result.contains("offensive")); //Controllo che sia offensiva
     }
 
     @Test
@@ -46,7 +46,7 @@ public class ValidatorTest {
 
         String result = validator.validateSentence(sentence, apiKey);
 
-        assertNotNull(result);
-        assertTrue(result.contains("valid"));
+        assertNotNull(result); //Controllo che non sia nulla
+        assertTrue(result.contains("valid")); //Controllo che sia valida
     }
 }
