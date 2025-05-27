@@ -26,7 +26,7 @@ class DictionaryInitializerTest {
     @Test
 	@DisplayName("La richieste di dizionari non esistenti genera IllegalArgumentException")
     void testInvalidDictionaryRequest() {
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
             dictionaryInitializer.getDictionary("invalidType");
         });
         assertEquals("Unknown dictionary type: invalidType", exception.getMessage());
@@ -35,6 +35,6 @@ class DictionaryInitializerTest {
     @Test
 	@DisplayName("Le strutture delle frasi inizializzate non sono nulle")
     void testSentenceStructuresInitialization() {
-        assertNotNull(dictionaryInitializer.getSentenceStructures(), "Le strutture delle frasi dovrebbero essere inizializzate");
+        assertNotNull(dictionaryInitializer.getSentenceStructures(), "Le strutture delle frasi non inizializzate");
     }
 }
