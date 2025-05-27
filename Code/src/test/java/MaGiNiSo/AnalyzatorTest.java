@@ -41,7 +41,7 @@ class AnalyzatorTest {
     @Test
 	@DisplayName("analyzeSyntax() con un tempo invalido manda eccezioni")
     void testInvalidVerbalTense() {
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
             analyzator.analyzeSyntax("The sky is blue.", "invalid_tense", "test_api_key");
         });
 
