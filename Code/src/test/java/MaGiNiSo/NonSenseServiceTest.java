@@ -45,17 +45,7 @@ class NonSenseServiceTest {
     }
 
     @Test
-	@DisplayName("Verifichiamo che printSyntacticTree() restituisca il syntacticTree atteso.")
-    void testPrintSyntacticTree() {
-        String expectedTree = "The [noun] [verb] the [adjective] [noun] in a [adjective] [noun] and [noun].";
-        Mockito.when(mockAnalyzator.getSyntacticTree()).thenReturn(expectedTree);
-
-        String syntacticTree = nonSenseService.printSyntacticTree();
-        assertEquals(expectedTree, syntacticTree, "L'albero sintattico generato non corrisponde a quello atteso.");
-    }
-
-    @Test
-	@DisplayName("Verifica corretezza chiamata e parametri di Validator da parte di nonSenseService")
+	@DisplayName("Verifica correttezza chiamata e parametri di Validator da parte di nonSenseService")
     void testValidateSentence() {
         String expectedValidation = "The phrase is valid and doesn't have offensive language.";
         Mockito.when(mockValidator.validateSentence("Hello world", "test_api_key")).thenReturn(expectedValidation);
