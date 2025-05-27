@@ -28,7 +28,7 @@ class GeneratorTest {
         // Simuliamo le strutture di frase
         SentenceStructures mockSentenceStructures = Mockito.mock(SentenceStructures.class);
         Mockito.when(mockSentenceStructures.getRandom()).thenReturn("[noun] [verb] [adjective].");
-        Mockito.when(mockSentenceStructures.get(1)).thenReturn("[noun] [verb] [adjective].");
+        Mockito.when(mockSentenceStructures.get(0)).thenReturn("[noun] [verb] [adjective].");
         Mockito.when(mockDictionaryInitializer.getSentenceStructures()).thenReturn(mockSentenceStructures);
 
         generator = new Generator(mockDictionaryInitializer);
@@ -38,14 +38,14 @@ class GeneratorTest {
 	@DisplayName("La sentence generata non e' nulla e le sue parole appartengono ai dizionari")
     void testGenerateSentenceWithValidTense() {
         String sentence = generator.generateSentence("present", 0);
-        assertNotNull(sentence, "La frase generata non dovrebbe essere nulla");
-        assertTrue(sentence.contains("test_word"), "La frase generata dovrebbe contenere parole di test");
+        assertNotNull(sentence, "La frase generata è nulla");
+        assertTrue(sentence.contains("test_word"), "La frase generata non contiene la parola del test");
     }
 
     @Test
 	@DisplayName("Generate manda un eccezione se il tempo verbale non valido.")
     void testGenerateSentenceWithInvalidTense() {
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
             generator.generateSentence("invalid_tense", 0);
         });
 
@@ -55,8 +55,8 @@ class GeneratorTest {
     @Test
 	@DisplayName("Sentence generata con la giusta struttura")
     void testGenerateSentenceWithSpecificStructure() {
-        String sentence = generator.generateSentence("past", 1);
-        assertNotNull(sentence, "La frase generata non dovrebbe essere nulla");
-        assertTrue(sentence.contains("test_word"), "La frase dovrebbe contenere le parole simulate");
+        String sentence = generator.generateSentence("past", 0);
+        assertNotNull(sentence, "La frase generata è nulla");
+        assertTrue(sentence.contains("test_word"), "La frase non contiene la parola del test");
     }
 }
