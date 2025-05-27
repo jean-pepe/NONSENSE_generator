@@ -22,9 +22,8 @@ class DictionaryTest {
     @Test
     @DisplayName("Aggiunta e recupero parola")
     void testAddWords() {
-        List<String> words = Arrays.asList("apple", "banana", "cherry");
+        List<String> words = Arrays.asList("sky", "moon", "earth");
         dictionary.add(words);
-
         String word = dictionary.get();
         assertTrue(words.contains(word), "La parola ottenuta appartiene tra quelle aggiunte");
     }
@@ -32,7 +31,7 @@ class DictionaryTest {
 	@Test
 	@DisplayName("Conferma che il dizionario contenga parole una volta che vengono aggiunte")
     void testGetRandomWord() {
-        dictionary.add(Arrays.asList("hello", "world", "test"));
+        dictionary.add(Arrays.asList("sky", "moon", "earth"));
         String word = dictionary.get();
         assertNotNull(word, "La parola ottenuta non dovrebbe essere null");
     }
