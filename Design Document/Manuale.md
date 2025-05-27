@@ -73,7 +73,17 @@ Imposta il tipo di richiesta HTTP che verrà inviata al server.
 
 * **getJSONObject(int index)** da org.json.JSONArray :<br><br>Accede all'elemento alla posizione index in un JSONArray, se è un JSONObject, lo restituisce.
 ### Nell'unit testing:
-* 
+* **mock(Class.class)** da org.mockito.Mockito :<br><br>Simula un oggetto fittizio di una classe che evita le dipendenze reali.
+
+* **when(mockObj.method()).thenReturn(value)** da org.mockito.Mockito :<br><br>Definisce il comportamento fittizio di un metodo quando viene chiamato su un oggetto mock.
+  
+* **assertThrows(IllegalArgumentException.class, () -> myMethod(null))** da org.junit.jupiter.api.Assertions : <br><br>Verifica che venga lanciata un'eccezione specifica durante l'esecuzione.
+
+* **assertEquals()** da org.junit.jupiter.api.Assertions : <br><br> Verifica che due valori siano uguali.
+
+* **assertNotNull()** da org.junit.jupiter.api.Assertions :<br><br> Verifica che un oggetto non sia null.
+
+* **assertTrue(boolean bool)** da org.junit.jupiter.api.Assertions :<br><br>Verifica che l'espressione booleana sia true.
 
 ## API esterne
 ### Google Natural Language  
