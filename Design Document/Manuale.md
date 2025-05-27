@@ -71,6 +71,7 @@ Imposta il tipo di richiesta HTTP che verrà inviata al server.
 * **optJSONArray(String key)** da org.json.JSONObject :<br><br>Cerca il valore associato alla chiave specificata, se esiste lo restituisce.
 
 * **getJSONObject(int index)** da org.json.JSONArray :<br><br>Accede all'elemento alla posizione index in un JSONArray, se è un JSONObject, lo restituisce.
+### Usate in unit testing
 
 ## API esterne
 ### Google Natural Language  
