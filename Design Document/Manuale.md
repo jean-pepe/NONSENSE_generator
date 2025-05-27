@@ -52,6 +52,7 @@ Versione minima richiesta: Java 17
 Testato su Maven 3.9.9 ma si consiglia una versione superiore a 3.6.0
 
 ## Funzioni principali riusate da librerie esistenti
+### Nel core:
 
 * **setRequestMethod(String method)** da java.net.HttpURLConnection :<br><br>
 Imposta il tipo di richiesta HTTP che verrà inviata al server.
@@ -71,7 +72,8 @@ Imposta il tipo di richiesta HTTP che verrà inviata al server.
 * **optJSONArray(String key)** da org.json.JSONObject :<br><br>Cerca il valore associato alla chiave specificata, se esiste lo restituisce.
 
 * **getJSONObject(int index)** da org.json.JSONArray :<br><br>Accede all'elemento alla posizione index in un JSONArray, se è un JSONObject, lo restituisce.
-### Usate in unit testing
+### Nell'unit testing:
+* 
 
 ## API esterne
 ### Google Natural Language  
