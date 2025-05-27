@@ -53,8 +53,8 @@ class AnalyzatorTest {
     void testSyntacticTreeFormat() {
         String syntacticTree = analyzator.getSyntacticTree();
 
-        assertNotNull(syntacticTree, "L'albero sintattico non dovrebbe essere nullo");
-        assertTrue(syntacticTree.contains("NOUN"), "Dovrebbe contenere la categoria NOUN");
-        assertTrue(syntacticTree.contains("VERB"), "Dovrebbe contenere la categoria VERB");
+        assertNotNull(syntacticTree, "L'albero sintattico è nullo");
+        assertTrue(syntacticTree.contains("NOUN"), "Non contiene la categoria NOUN");
+        assertTrue(syntacticTree.contains("VERB"), "Non contiene la categoria VERB");
     }
 }
