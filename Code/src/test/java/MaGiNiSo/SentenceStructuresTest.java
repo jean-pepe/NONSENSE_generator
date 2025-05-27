@@ -29,8 +29,8 @@ class SentenceStructuresTest {
         };
 
         String randomStructure = sentenceStructures.getRandom();
-        assertNotNull(randomStructure, "La struttura ottenuta non dovrebbe essere null");
-        assertTrue(structures.contains(randomStructure), "La struttura dovrebbe essere una di quelle definite");
+        assertNotNull(randomStructure, "La struttura ottenuta è nulla");
+        assertTrue(structures.contains(randomStructure), "La struttura non è una di quelle definite");
     }
 
 }
