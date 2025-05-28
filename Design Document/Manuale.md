@@ -16,13 +16,14 @@ Le funzionalità principali sono:
 3. Scaricare la repository
       * > git clone https://github.com/jean-pepe/NONSENSE_generator.git
       * Altrimenti scaricare la repository come zip e estrarre i file
-4. Aprire il terminale
-5. Andare nella directory contenente il progetto
+
+4. Dalla directory contenente il progetto andare nella sotto cartella Code
+5. Aprire il terminale
 6. Digitare
    > mvn clean package
 7. Digitare
    > mvn spring-boot:run
-9. Aprire il browser e digitare nella barra degli indirizzi
+8. Aprire il browser e digitare nella barra degli indirizzi
     > http://localhost:8080/
    
 ## Ambienti di esecuzione
