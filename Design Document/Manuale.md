@@ -17,7 +17,7 @@ Le funzionalità principali sono:
       * > git clone https://github.com/jean-pepe/NONSENSE_generator.git
       * Altrimenti scaricare la repository come zip e estrarre i file
 
-4. Dalla directory contenente il progetto andare nella sotto cartella Code
+4. Dalla directory contenente il progetto andare nella sottocartella Code
 5. Aprire il terminale
 6. Digitare
    > mvn clean package
