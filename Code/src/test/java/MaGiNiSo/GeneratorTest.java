@@ -17,7 +17,7 @@ class GeneratorTest {
         mockDictionaryInitializer = Mockito.mock(DictionaryInitializer.class);
         mockDictionary = Mockito.mock(Dictionary.class);
 
-        // Simuliamo il comportamento dei dizionari
+        // Mock the dictionary behaviour 
         Mockito.when(mockDictionaryInitializer.getDictionary("nouns")).thenReturn(mockDictionary);
         Mockito.when(mockDictionaryInitializer.getDictionary("verbsPresent")).thenReturn(mockDictionary);
         Mockito.when(mockDictionaryInitializer.getDictionary("verbsPast")).thenReturn(mockDictionary);
@@ -25,7 +25,7 @@ class GeneratorTest {
         Mockito.when(mockDictionaryInitializer.getDictionary("adjectives")).thenReturn(mockDictionary);
         Mockito.when(mockDictionary.get()).thenReturn("sky");
 
-        // Simuliamo le strutture di frase
+        // Mock sentence structure
         SentenceStructures mockSentenceStructures = Mockito.mock(SentenceStructures.class);
         Mockito.when(mockSentenceStructures.getRandom()).thenReturn("[noun] [verb] [adjective].");
         Mockito.when(mockSentenceStructures.get(0)).thenReturn("[noun] [verb] [adjective].");
@@ -38,24 +38,27 @@ class GeneratorTest {
 	@DisplayName("La sentence generata non e' nulla e le sue parole appartengono ai dizionari")
     void testGenerateSentenceWithValidTense() {
         String sentence = generator.generateSentence("present", 0);
-        assertNotNull(sentence, "La frase generata e' nulla");
-        assertTrue(sentence.contains("sky"), "La frase generata non contiene la parola del test");
+        // Check if generated sentence is null
+	assertNotNull(sentence, "La frase generata e' nulla");
+        // Check if sentence has test word
+	assertTrue(sentence.contains("sky"), "La frase generata non contiene la parola del test");
     }
 
     @Test
 	@DisplayName("Generate manda un eccezione se il tempo verbale non valido.")
     void testGenerateSentenceWithInvalidTense() {
-        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+        // Check if with an invalid tense throws exception
+	IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
             generator.generateSentence("invalid_tense", 0);
         });
-
         assertEquals("Invalid verbal tense, accepted tenses: present/past/future", exception.getMessage());
     }
 
     @Test
 	@DisplayName("Sentence generata con la giusta struttura")
     void testGenerateSentenceWithSpecificStructure() {
-        String sentence = generator.generateSentence("past", 0);
+        // Check if generated sentence is not null and has test word
+	String sentence = generator.generateSentence("past", 0);
         assertNotNull(sentence, "La frase generata e' nulla");
         assertTrue(sentence.contains("sky"), "La frase non contiene la parola del test");
     }
