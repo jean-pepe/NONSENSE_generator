@@ -25,7 +25,7 @@ class DictionaryTest {
         List<String> words = Arrays.asList("sky", "moon", "earth");
         dictionary.add(words);
         String word = dictionary.get();
-        assertTrue(words.contains(word), "La parola ottenuta appartiene tra quelle aggiunte");
+        assertTrue(words.contains(word), "La parola ottenuta non e' presente tra quelle aggiunte");
     }
 	
 	@Test
