@@ -21,32 +21,36 @@ public class ValidatorTest {
     @Test
     @DisplayName("Validator da un risultato non nullo e offensivo")
     public void testValidateSentenceOffensive() {
-        String sentence = "This is an offensive sentence!";
+        String sentence = "This is an offensive sentence";
         String apiKey = "fake_api_key";
 
-        // Simuliamo la risposta prevista per una frase offensiva
+        // Mock answer to an offensive sentence
         Mockito.when(validator.validateSentence(sentence, apiKey))
                .thenReturn("The phrase has offensive content: Profanity (confidence: 0.90)");
 
         String result = validator.validateSentence(sentence, apiKey);
 
-        assertNotNull(result); //Controllo che la stringa non sia nulla
-        assertTrue(result.contains("offensive")); //Controllo che sia offensiva
+        // Check if result is not null
+        assertNotNull(result);
+        // Check if result is offensive
+        assertTrue(result.contains("offensive"));
     }
 
     @Test
     @DisplayName("Validator da un risultato non nullo e non offensivo")
     public void testValidateSentenceValid() {
-        String sentence = "Hello, how are you?";
+        String sentence = "This is a valid sentence";
         String apiKey = "fake_api_key";
 
-        // Simuliamo la risposta prevista per una frase valida
+        // Mock answer to a valid sentence
         Mockito.when(validator.validateSentence(sentence, apiKey))
                .thenReturn("The phrase is valid and doesn't have offensive language.");
 
         String result = validator.validateSentence(sentence, apiKey);
 
-        assertNotNull(result); //Controllo che non sia nulla
-        assertTrue(result.contains("valid")); //Controllo che sia valida
+        // Check if result is not null
+        assertNotNull(result);
+        // Check if result is valid
+        assertTrue(result.contains("valid"));
     }
 }
