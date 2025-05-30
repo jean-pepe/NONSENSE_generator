@@ -27,14 +27,14 @@ class AnalyzatorTest {
         String apiKey = "test_api_key";
 
         // Start of syntax analysis
-	// Check if with valid input does not throw exceptions
+	    // Check if with valid input does not throw exceptions
         assertDoesNotThrow(() -> analyzator.analyzeSyntax(sentence, time, apiKey));
 
         List<String> nouns = analyzator.getNouns();
         List<String> verbs = analyzator.getVerbs();
         List<String> adjectives = analyzator.getAdjectives();
 
-	// Check if they are not null
+	    // Check if they are not null
         assertNotNull(nouns, "La lista dei sostantivi non dovrebbe essere nulla");
         assertNotNull(verbs, "La lista dei verbi non dovrebbe essere nulla");
         assertNotNull(adjectives, "La lista degli aggettivi non dovrebbe essere nulla");
@@ -44,7 +44,7 @@ class AnalyzatorTest {
 	@DisplayName("analyzeSyntax() con un tempo invalido manda eccezioni")
     void testInvalidVerbalTense() {
         // Check if with invalid tense throws exception
-	IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+	    IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
             analyzator.analyzeSyntax("The sky is blue.", "invalid_tense", "test_api_key");
         });
 
@@ -56,10 +56,18 @@ class AnalyzatorTest {
     void testSyntacticTreeFormat() {
         String syntacticTree = analyzator.getSyntacticTree();
 
-	// Check if syntactic tree is not null
+	    // Check if syntactic tree is not null
         assertNotNull(syntacticTree, "L'albero sintattico è nullo");
-	// Check if it contains noun and verb categories
+	    // Check if it contains noun and verb categories
         assertTrue(syntacticTree.contains("NOUN"), "Non contiene la categoria NOUN");
         assertTrue(syntacticTree.contains("VERB"), "Non contiene la categoria VERB");
+        assertTrue(syntacticTree.contains("ADJECTIVE"), "Non contiene la categoria ADJECTIVE");
+        assertTrue(syntacticTree.contains("CONJ"), "Non contiene la categoria CONJ");
+        assertTrue(syntacticTree.contains("PRON"), "Non contiene la categoria PRON");
+        assertTrue(syntacticTree.contains("NUM"), "Non contiene la categoria NUM");
+        assertTrue(syntacticTree.contains("PREPOSITION"), "Non contiene la categoria PREPOSITION");
+        assertTrue(syntacticTree.contains("PRT"), "Non contiene la categoria PRT");
+        assertTrue(syntacticTree.contains("X"), "Non contiene la categoria X");
+        assertTrue(syntacticTree.contains("UNKNOWN"), "Non contiene la categoria UNKNOWN");
     }
 }
