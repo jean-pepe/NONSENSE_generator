@@ -14,7 +14,7 @@ class SentenceStructuresTest {
 
     @BeforeEach
     void setUp() {
-        sentenceStructures = new SentenceStructures("src/test/resources/test.txt"); // Usa un file di test per evitare dipendenze esterne
+        sentenceStructures = new SentenceStructures("src/test/resources/test.txt");
     }
 
     @Test
@@ -24,7 +24,7 @@ class SentenceStructuresTest {
         sentenceStructures = new SentenceStructures("src/test/resources/test.txt") {
             @Override
             public String getRandom() {
-                return structures.get(0); // Simuliamo il ritorno di una struttura specifica per il test
+                return structures.get(0); 
             }
         };
 
