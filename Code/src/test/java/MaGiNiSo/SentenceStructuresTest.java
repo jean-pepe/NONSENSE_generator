@@ -6,6 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.beans.Transient;
 import java.util.Arrays;
 
 class SentenceStructuresTest {
@@ -31,6 +32,21 @@ class SentenceStructuresTest {
         String randomStructure = sentenceStructures.getRandom();
         assertNotNull(randomStructure, "La struttura ottenuta e' nulla");
         assertTrue(structures.contains(randomStructure), "La struttura non e' una di quelle definite");
+    }
+
+    @Test
+    @DisplayName("Numero sentence structure invalido lancia eccezione")
+    void testGetInvalidIndex() {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+            sentenceStructures.get(0);
+        });
+        assertTrue(exception.getMessage().contains("Structure number not admitted."));
+    }
+
+    @Test
+    @DisplayName("printStructures() non lancia eccezioni")
+    void testPrintStructures() {
+        assertDoesNotThrow(() -> sentenceStructures.printStructures());
     }
 
 }
