@@ -23,7 +23,7 @@ class GeneratorTest {
         Mockito.when(mockDictionaryInitializer.getDictionary("verbsPast")).thenReturn(mockDictionary);
         Mockito.when(mockDictionaryInitializer.getDictionary("verbsFuture")).thenReturn(mockDictionary);
         Mockito.when(mockDictionaryInitializer.getDictionary("adjectives")).thenReturn(mockDictionary);
-        Mockito.when(mockDictionary.get()).thenReturn("test_word");
+        Mockito.when(mockDictionary.get()).thenReturn("sky");
 
         // Simuliamo le strutture di frase
         SentenceStructures mockSentenceStructures = Mockito.mock(SentenceStructures.class);
@@ -38,8 +38,8 @@ class GeneratorTest {
 	@DisplayName("La sentence generata non e' nulla e le sue parole appartengono ai dizionari")
     void testGenerateSentenceWithValidTense() {
         String sentence = generator.generateSentence("present", 0);
-        assertNotNull(sentence, "La frase generata è nulla");
-        assertTrue(sentence.contains("test_word"), "La frase generata non contiene la parola del test");
+        assertNotNull(sentence, "La frase generata e' nulla");
+        assertTrue(sentence.contains("sky"), "La frase generata non contiene la parola del test");
     }
 
     @Test
@@ -56,7 +56,7 @@ class GeneratorTest {
 	@DisplayName("Sentence generata con la giusta struttura")
     void testGenerateSentenceWithSpecificStructure() {
         String sentence = generator.generateSentence("past", 0);
-        assertNotNull(sentence, "La frase generata è nulla");
-        assertTrue(sentence.contains("test_word"), "La frase non contiene la parola del test");
+        assertNotNull(sentence, "La frase generata e' nulla");
+        assertTrue(sentence.contains("sky"), "La frase non contiene la parola del test");
     }
 }
