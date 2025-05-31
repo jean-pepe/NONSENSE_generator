@@ -49,7 +49,7 @@ class GeneratorTest {
     void testGenerateSentenceWithInvalidTense() {
         // Check if with an invalid tense throws exception
 	IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
-            generator.generateSentence("invalid_tense", 0);
+            generator.generateSentence("invalid", 0);
         });
         assertEquals("Invalid verbal tense, accepted tenses: present/past/future", exception.getMessage());
     }
