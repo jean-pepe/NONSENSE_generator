@@ -58,7 +58,7 @@ class AnalyzatorTest {
 
 	    // Check if syntactic tree is not null
         assertNotNull(syntacticTree, "L'albero sintattico è nullo");
-	    // Check if it contains noun and verb categories
+	    // Check if it contains categories
         assertTrue(syntacticTree.contains("NOUN"), "Non contiene la categoria NOUN");
         assertTrue(syntacticTree.contains("VERB"), "Non contiene la categoria VERB");
         assertTrue(syntacticTree.contains("ADJECTIVE"), "Non contiene la categoria ADJECTIVE");
